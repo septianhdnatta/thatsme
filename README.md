@@ -65,8 +65,11 @@ cd lexion-portfolio
 Buka file index.html secara langsung melalui browser favorit kamu. Tidak membutuhkan server atau build tools.
 
 
----
 
+
+
+--- 
+```
 🔐 Lisensi
 
 Kode sumber ini dirilis di bawah lisensi MIT.
