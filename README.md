@@ -72,5 +72,5 @@ Proyek ini bebas digunakan untuk keperluan pribadi atau modifikasi pribadi. Tida
 
 ---
 
-Kalau kamu butuh versi markdown-nya langsung ditempel ke GitHub, atau ingin ditambahkan badge GitHub seperti repo stars atau lisensi, tinggal bilang.
+
 
