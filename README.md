@@ -1,66 +1,86 @@
-# 🌐 Lexion - Personal Portfolio Website
+# 🌐 Lexion - Personal Web Portfolio
 
-Lexion adalah website portofolio pribadi bergaya modern, dibangun menggunakan HTML, Tailwind CSS, dan JavaScript. Website ini menampilkan identitas digital secara interaktif, mendukung GIF sebagai profil, pemutar musik, mode gelap/terang, serta badge animasi.
-
-![Screenshot](https://files.catbox.moe/1mh78d.jpg) <!-- Ganti URL dengan preview yang kamu host -->
+Selamat datang di website portofolio **Lexion**! Ini adalah personal site yang dibuat dengan **Tailwind CSS**, HTML, dan sedikit JavaScript. Situs ini menampilkan profil pribadi, media sosial, tautan penting, serta fitur interaktif modern.
 
 ---
 
 ## ✨ Fitur Utama
 
-- 🌗 **Light / Dark Mode Toggle**
-- 🖼️ **GIF Profile Support**
-- 🎵 **Music Player (Customizable Track)**
-- 💫 **Animated Badges dengan Emoji & Ikon**
-- 🔗 **Link Cards Interaktif (Whatsapp, Bot, GitHub)**
-- ✅ **Verified Badge di Samping Nama**
+- 🎨 **Tema Gelap & Terang** (dark/light mode toggle dengan ikon dropdown)
+- 🖼️ **Banner responsif** dengan background custom
+- 👑 **Foto profil dengan mahkota emas animasi + kelap-kelip**
+- 🧩 **Badge Hobi & Minat** lengkap dengan ikon lucu
+- ⏳ **Countdown Ulang Tahun** (menuju 21 Februari 2026)
+- 🎵 **Music Player** built-in
+- 🔗 **Link Cards** yang stylish dan responsif
+- 💻 **Link Source Code (GitHub)**
+- 📦 **Loader animasi** saat masuk ke halaman
+- 🧹 **Efek particle seperti debu jatuh dari mahkota**
+- 🔐 **Watermark tersembunyi di source code**
 
 ---
 
-## 📁 Struktur Proyek
+## 🌈 Teknologi yang Digunakan
 
-📦 lexion-portfolio/ ┣ 📄 index.html ┣ 📄 README.md ┣ 📄 LICENSE ┗ 📂 assets/ ┣ 📁 images/ ┗ 📁 audio/
-
----
-
-## 🚀 Cara Menjalankan
-
-1. Clone repositori ini:
-   ```bash
-   git clone https://github.com/username/lexion-portfolio.git
-   cd lexion-portfolio
-
-2. Buka index.html di browser.
-Tidak memerlukan instalasi tambahan atau server lokal.
-
-
-
+- [Tailwind CSS](https://tailwindcss.com)
+- [Font Awesome](https://fontawesome.com)
+- [Google Fonts (Poppins)](https://fonts.google.com/specimen/Poppins)
+- Pure HTML & CSS (tanpa framework JS besar)
 
 ---
 
-🛠️ Kustomisasi
+## 🔧 Cara Menjalankan
 
-Elemen	Lokasi	Cara Ubah
+Kamu bisa meng-clone repo ini dan langsung buka `index.html` di browser:
 
-Gambar Profil	<img src="..." />	Ganti URL gambar (termasuk GIF)
-Lagu	<audio src="..." />	Ganti URL file musik
-Badge	<span class="shiny-badge">	Tambah/ubah teks dan ikon di HTML
-Warna	CSS --primary-color, --secondary-color	Ganti di bagian <style>
+```bash
+git clone https://github.com/username/lexion-portfolio.git
+cd lexion-portfolio
+open index.html
 
+Atau upload ke Vercel, Netlify, atau server hosting kamu.
 
 
 ---
 
-📜 Lisensi
+📆 Birthday Countdown
 
-MIT License © 2025 Septian (Lee Xiao Jun)
+Ulang tahun dihitung mundur dari hari ini menuju:
 
-Silakan digunakan, dimodifikasi, dan dikembangkan secara bebas.
+🗓️ 21 Februari 2026
+Ditampilkan di UI dengan badge countdown otomatis.
 
 
 ---
 
-> Dibuat dengan ❤️ oleh Septian (Lee Xiao Jun)
+🔒 Lisensi
+
+Proyek ini menggunakan lisensi MIT License. Silakan baca file LICENSE untuk informasi lebih lanjut.
+
+
+---
+
+👤 Creator
+
+Septian (Lee Xiao Jun)
+🔗 Website
+🐱‍🏍 Hobi: Music 🎵 | Coding 💻 | Gaming 🎮 | Cat Dad 🐱
+
+
+---
+
+📸 Preview
+
+
+
+
+---
+
+📝 Catatan
+
+Pastikan koneksi internet aktif agar semua CDN dan file eksternal bisa dimuat.
+
+Mahkota profil hanya muncul jika gambar profil berhasil dimuat.
 
 
 
