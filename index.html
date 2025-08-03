@@ -23,25 +23,15 @@
       color: #334155;
     }
 
-.banner {
-  height: 200px;
-  background-image: url('https://files.catbox.moe/73l02p.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-        .banner-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px);
-            background-size: 15px 15px;
-            opacity: 0.6;
-        }
+    .banner {
+      height: 200px;
+      background-image: url('https://files.catbox.moe/73l02p.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
     .badge {
       background-color: #f1f5f9;
@@ -91,102 +81,100 @@
       color: white;
       background-color: var(--primary-color);
     }
-        /* Music Player Styles */
-        .music-player {
-            background-color: white;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            width: 100%;
-        }
 
-        .player-controls {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            align-items: center; /* Center align items */
-        }
+    /* Music Player Styles */
+    .music-player {
+      background-color: white;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+    }
 
-        .music-title {
-            font-weight: 600;
-            font-size: 16px;
-            color: #333;
-            text-align: center;
-            margin: 5px 0;
-        }
+    .player-controls {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+    }
 
-        .progress-container {
-            width: 100%;
-            height: 4px;
-            background: #e0e0e0;
-            border-radius: 2px;
-            cursor: pointer;
-            margin: 5px 0;
-        }
-        
-        .progress-bar {
-            height: 100%;
-            background: var(--primary-color);
-            border-radius: 2px;
-            width: 0%;
-            transition: width 0.1s linear;
-        }
+    .music-title {
+      font-weight: 600;
+      font-size: 16px;
+      color: #333;
+      text-align: center;
+      margin: 5px 0;
+    }
 
-        .time-display {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            color: #666;
-            margin-top: 5px;
-        }
+    .progress-container {
+      width: 100%;
+      height: 4px;
+      background: #e0e0e0;
+      border-radius: 2px;
+      cursor: pointer;
+      margin: 5px 0;
+      position: relative;
+    }
 
-        .cover-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+    .progress-bar {
+      height: 100%;
+      background: var(--primary-color);
+      border-radius: 2px;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
 
-        .cover-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .time-display {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+      width: 100%;
+    }
 
-        .play-button {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: none;
-            width: auto;
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            padding: 0;
-            margin-right: 10px;
-        }
+    .cover-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
+    }
 
-        .play-button:hover {
-            color: var(--secondary-color);
-        }
+    .cover-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .play-button {
+      background-color: transparent;
+      color: var(--primary-color);
+      border: none;
+      width: auto;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0;
+      margin-right: 10px;
+      font-size: 1.25rem;
+    }
+
+    .play-button:hover {
+      color: var(--secondary-color);
+    }
   </style>
 </head>
 <body>
-      <!-- Banner Section -->
-<div class="banner relative">
-    <!-- Tidak ada banner-pattern atau banner-content -->
-    <div class="flex justify-center profile-img-container">
-        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center profile-img">
-            <img src="https://placehold.co/300x300" alt="Profile Photo" class="w-full h-full rounded-full object-cover" />
-        </div>
-    </div>
-</div>
+  <!-- Banner Section -->
+  <div class="banner relative"></div>
 
   <!-- Profile Image (outside banner) -->
   <div class="flex justify-center relative -mt-16 z-20">
@@ -210,35 +198,34 @@
       </div>
     </div>
 
-
-        <!-- Music Player Section -->
-        <div class="music-player mb-8">
-            <div class="cover-image">
-                <img src="https://files.catbox.moe/tnjqna.jpg" alt="Cover Image">
+    <!-- Music Player Section -->
+    <div class="music-player mb-8">
+      <div class="cover-image">
+        <img src="https://files.catbox.moe/tnjqna.jpg" alt="Cover Image">
+      </div>
+      <div class="player-controls">
+        <audio id="audio-player" src="https://files.catbox.moe/vfbecq.mp3"></audio>
+        <div class="music-title">Everything U Are - Hindia</div>
+        <div class="flex items-center w-full mt-2">
+          <button class="play-button" onclick="togglePlay()">
+            <i class="fas fa-play"></i>
+          </button>
+          <div class="flex-1 px-3">
+            <div class="progress-container" onclick="seek(event)">
+              <div class="progress-bar" id="progress-bar"></div>
             </div>
-            <div class="player-controls">
-                <audio id="audio-player" src="https://files.catbox.moe/vfbecq.mp3"></audio>
-                <div class="music-title">Everything U Are - Hindia</div>
-                <div class="flex items-center w-full mt-2">
-                    <button class="play-button" onclick="togglePlay()">
-                        <i class="fas fa-play text-lg"></i>
-                    </button>
-                    <div class="flex-1 px-3">
-                        <div class="progress-container" onclick="seek(event)">
-                            <div class="progress-bar" id="progress-bar"></div>
-                        </div>
-                        <div class="flex justify-between text-xs text-gray-500 mt-1">
-                    <span id="current-time">0:00</span>
-                            <span id="duration">0:00</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="time-display">
+              <span id="current-time">0:00</span>
+              <span id="duration">0:00</span>
             </div>
+          </div>
         </div>
+      </div>
+    </div>
 
     <!-- Link Cards -->
     <div class="space-y-4 mb-8">
-      <!-- Featured Projects -->
+      <!-- Hayase Yuuka (Bot) -->
       <a href="#featured" class="block">
         <div class="link-card bg-white p-5 flex items-center gap-4">
           <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-indigo-100 to-green-100 flex items-center justify-center text-indigo-500">
@@ -254,7 +241,7 @@
         </div>
       </a>
 
-      <!-- Full Portfolio -->
+      <!-- WhatsaApp Channel -->
       <a href="#portfolio" class="block">
         <div class="link-card bg-white p-5 flex items-center gap-4">
           <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center text-blue-500">
@@ -270,7 +257,7 @@
         </div>
       </a>
 
-      <!-- Resume -->
+      <!-- Source Code -->
       <a href="#resume" class="block">
         <div class="link-card bg-white p-5 flex items-center gap-4">
           <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-green-100 to-teal-100 flex items-center justify-center text-green-500">
@@ -329,71 +316,74 @@
     </div>
   </div>
 
-  <!-- Entry Animation -->
-    <script>
-        // Simple animation on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.link-card');
-            
-            cards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 100);
-                
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            });
-        });
+  <!-- Entry Animation + Music Player Script -->
+  <script>
+    // Link card entrance
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.link-card');
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 100);
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      });
+    });
 
-        // Music player functionality
-        const audioPlayer = document.getElementById('audio-player');
-        const progressBar = document.getElementById('progress-bar');
-        const currentTimeDisplay = document.getElementById('current-time');
-        const durationDisplay = document.getElementById('duration');
+    // Music player functionality
+    const audioPlayer = document.getElementById('audio-player');
+    const progressBar = document.getElementById('progress-bar');
+    const currentTimeDisplay = document.getElementById('current-time');
+    const durationDisplay = document.getElementById('duration');
 
-        function togglePlay() {
-            const playButton = document.querySelector('.play-button i');
-            
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-                playButton.classList.remove('fa-play');
-                playButton.classList.add('fa-pause');
-            } else {
-                audioPlayer.pause();
-                playButton.classList.remove('fa-pause');
-                playButton.classList.add('fa-play');
-            }
-        }
+    function togglePlay() {
+      const playIcon = document.querySelector('.play-button i');
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+        playIcon.classList.remove('fa-play');
+        playIcon.classList.add('fa-pause');
+      } else {
+        audioPlayer.pause();
+        playIcon.classList.remove('fa-pause');
+        playIcon.classList.add('fa-play');
+      }
+    }
 
-        function formatTime(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = Math.floor(seconds % 60);
-            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-        }
+    function formatTime(seconds) {
+      if (isNaN(seconds)) return '0:00';
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
 
-        function updateProgress() {
-            const percent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-            progressBar.style.width = `${percent}%`;
-            currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
-        }
+    function updateProgress() {
+      if (!audioPlayer.duration) return;
+      const percent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+      progressBar.style.width = `${percent}%`;
+      currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
+    }
 
-        function updateDuration() {
-            durationDisplay.textContent = formatTime(audioPlayer.duration);
-        }
+    function updateDuration() {
+      durationDisplay.textContent = formatTime(audioPlayer.duration);
+    }
 
-        function seek(e) {
-            const percent = e.offsetX / e.target.offsetWidth;
-            audioPlayer.currentTime = percent * audioPlayer.duration;
-        }
+    function seek(e) {
+      const container = e.currentTarget;
+      const rect = container.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left;
+      const percent = offsetX / rect.width;
+      audioPlayer.currentTime = percent * audioPlayer.duration;
+    }
 
-        audioPlayer.addEventListener('timeupdate', updateProgress);
-        audioPlayer.addEventListener('loadedmetadata', updateDuration);
-        audioPlayer.addEventListener('ended', () => {
-            document.querySelector('.play-button i').classList.remove('fa-pause');
-            document.querySelector('.play-button i').classList.add('fa-play');
-        });
-    </script>
+    audioPlayer.addEventListener('timeupdate', updateProgress);
+    audioPlayer.addEventListener('loadedmetadata', updateDuration);
+    audioPlayer.addEventListener('ended', () => {
+      const playIcon = document.querySelector('.play-button i');
+      playIcon.classList.remove('fa-pause');
+      playIcon.classList.add('fa-play');
+    });
+  </script>
 </body>
 </html>
