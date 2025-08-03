@@ -284,7 +284,8 @@ body {
 .play-button:hover {
   color: var(--secondary-color);
 }
-    @keyframes crown-glow {
+    /* Kelap-kelip tetap ada */
+@keyframes crown-glow {
   0%   { filter: drop-shadow(0 0 3px #facc15); opacity: 1; }
   50%  { filter: drop-shadow(0 0 6px #fde68a); opacity: 0.7; }
   100% { filter: drop-shadow(0 0 3px #facc15); opacity: 1; }
@@ -292,6 +293,40 @@ body {
 
 .glow-crown {
   animation: crown-glow 1.5s infinite ease-in-out;
+}
+
+/* Partikel debu */
+.particle-crown::before,
+.particle-crown::after {
+  content: '';
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  width: 3px;
+  height: 3px;
+  background: #facc15;
+  border-radius: 50%;
+  opacity: 0;
+  animation: dust-fall 2s infinite ease-in-out;
+}
+
+.particle-crown::after {
+  left: 55%;
+  animation-delay: 1s;
+}
+
+@keyframes dust-fall {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(15px) scale(0.5);
+    opacity: 0;
+  }
 }
   </style>
 </head>
@@ -325,7 +360,7 @@ body {
          onerror="this.onerror=null;this.src='https://placehold.co/300x300?text=Profile+Photo'" />
 
     <!-- Animated Crown -->
-    <i class="fas fa-crown text-yellow-400 text-xl absolute -top-2 right-2 rotate-[25deg] glow-crown"></i>
+    <i class="fas fa-crown text-yellow-400 text-xl absolute -top-2 right-2 rotate-[25deg] glow-crown particle-crown"></i>
   </div>
 </div>
  <!--<div class="flex justify-center relative -mt-16 z-20">
