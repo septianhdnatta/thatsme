@@ -14,14 +14,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lexion - Portofolio</title>
-  <!-- Open Graph / WhatsApp Preview -->
 <meta property="og:title" content="Lexion - Personal Portfolio" />
 <meta property="og:description" content="Personal web portofolio by Septian (Lee Xiao Jun)." />
 <meta property="og:image" content="https://files.catbox.moe/73l02p.jpg" />
 <meta property="og:url" content="https://leexiaojun.vercel.app/" />
 <meta property="og:type" content="website" />
-
-<!-- Twitter Card Preview (optional, good practice) -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Lexion - Personal Portfolio" />
 <meta name="twitter:description" content="Explore the digital world of Lee Xiao Jun." />
@@ -284,7 +281,7 @@ body {
 .play-button:hover {
   color: var(--secondary-color);
 }
-    /* Kelap-kelip tetap ada */
+    /* Kelap-kelip */
 @keyframes crown-glow {
   0%   { filter: drop-shadow(0 0 3px #facc15); opacity: 1; }
   50%  { filter: drop-shadow(0 0 6px #fde68a); opacity: 0.7; }
@@ -353,7 +350,6 @@ body {
   <!-- Profile Image --> 
     <div class="flex justify-center relative -mt-16 z-20">
   <div class="w-32 h-32 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg border-4 border-white dark:border-gray-800 relative">
-    <!-- Profile Image -->
     <img src="https://files.catbox.moe/xdy8jt.jpg" 
          alt="Profile" 
          class="w-full h-full object-cover rounded-full" 
@@ -442,8 +438,7 @@ body {
     
 <!-- Link Cards -->
     <div class="space-y-4 mb-8">
-  <!-- Hayase Yuuka (Bot) -->
-  <a href="#featured" class="block">
+  <a href="#" class="block">
     <div class="link-card bg-white dark:bg-gray-800 p-5 flex items-center gap-4">
       <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-indigo-100 to-green-100 dark:from-indigo-800 dark:to-green-800 flex items-center justify-center text-indigo-500 dark:text-indigo-300">
         <i class="fas fa-star fa-lg"></i>
@@ -456,7 +451,8 @@ body {
         <i class="fas fa-chevron-right"></i>
       </div>
     </div>
-  </a>  <!-- WhatsaApp Channel -->  <a href="#portfolio" class="block">
+  </a> 
+      <a href="#" class="block">
     <div class="link-card bg-white dark:bg-gray-800 p-5 flex items-center gap-4">
       <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-800 dark:to-purple-800 flex items-center justify-center text-blue-500 dark:text-blue-300">
         <i class="fab fa-whatsapp fa-lg"></i>
@@ -469,7 +465,8 @@ body {
         <i class="fas fa-chevron-right"></i>
       </div>
     </div>
-  </a>  <!-- Source Code -->  <a href="https://github.com/septianhdnatta/thatsme" class="block">
+  </a>  
+      <a href="https://github.com/septianhdnatta/thatsme" class="block">
     <div class="link-card bg-white dark:bg-gray-800 p-5 flex items-center gap-4">
       <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-green-100 to-teal-100 dark:from-green-800 dark:to-teal-800 flex items-center justify-center text-green-500 dark:text-green-300">
         <i class="fab fa-github fa-lg"></i>
@@ -483,13 +480,12 @@ body {
       </div>
     </div>
   </a>
-</div>
-    <!-- Footer -->
+    </div>
     <div class="text-center text-gray-500 text-xs">
       <p>© 2025 My Portfolio. All rights reserved.</p>
       <p class="mt-1">Made with ❤️ by septianhdnatta</p>
     </div>
-  </div>  <!-- Script -->  <script>
+  </div>  <script>
     const themeMenu = document.getElementById('theme-menu');
 
     function toggleDropdown() {
@@ -558,12 +554,12 @@ body {
     setTimeout(() => {
       const loader = document.getElementById("preloader");
       if (loader) {
-        loader.classList.add("opacity-0"); // fade out
+        loader.classList.add("opacity-0"); 
         setTimeout(() => {
-          loader.style.display = "none"; // remove after transition
-        }, 500); // match duration-500
+          loader.style.display = "none"; 
+        }, 500); 
       }
-    }, 1000); // delay before fade-out
+    }, 1000); 
   });
 
 
