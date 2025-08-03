@@ -1,95 +1,108 @@
-Berikut adalah versi terbaru dari README.md untuk proyek portofolio kamu, yang mencakup semua fitur terbaru seperti tema gelap/terang, loader, mahkota animasi, musik player, countdown ulang tahun, dan lainnya:
+# ⚡ Lexion — Personal Web Portfolio
 
-
----
-
-# 🌐 Lexion - Personal Web Portfolio
-
-Selamat datang di website portofolio **Lexion**! Ini adalah personal site yang dibuat dengan **Tailwind CSS**, HTML, dan sedikit JavaScript. Situs ini menampilkan profil pribadi, media sosial, tautan penting, serta fitur interaktif modern.
+**Lexion** adalah sebuah situs portofolio personal dengan tampilan modern, interaktif, dan penuh sentuhan visual yang estetik. Dibuat dengan kombinasi **HTML**, **Tailwind CSS**, dan **JavaScript** ringan, web ini dirancang untuk menampilkan identitas digital kreatif secara elegan dan responsif.
 
 ---
 
-## ✨ Fitur Utama
+## 🌟 Fitur Unggulan
 
-- 🎨 **Tema Gelap & Terang** (dark/light mode toggle dengan ikon dropdown)
-- 🖼️ **Banner responsif** dengan background custom
-- 👑 **Foto profil dengan mahkota emas animasi + kelap-kelip**
-- 🧩 **Badge Hobi & Minat** lengkap dengan ikon lucu
-- ⏳ **Countdown Ulang Tahun** (menuju 21 Februari 2026)
-- 🎵 **Music Player** built-in
-- 🔗 **Link Cards** yang stylish dan responsif
-- 💻 **Link Source Code (GitHub)**
-- 📦 **Loader animasi** saat masuk ke halaman
-- 🧹 **Efek particle seperti debu jatuh dari mahkota**
-- 🔐 **Watermark tersembunyi di source code**
+- 🎨 **Mode Gelap & Terang Otomatis**  
+  Tema dapat diganti secara manual melalui dropdown toggle dengan ikon 🌞 / 🌙.
+
+- 👑 **Foto Profil Dinamis**  
+  Menampilkan gambar profil (GIF didukung), dilengkapi dengan mahkota emas menyala & partikel debu jatuh secara animatif.
+
+- 🏷️ **Badge Interaktif**  
+  Hobi dan status ditampilkan dalam bentuk shiny badge dengan ikon lucu.
+
+- 🎂 **Countdown Ulang Tahun**  
+  Hitung mundur otomatis menuju tanggal **21 Februari 2026**, ditampilkan dalam bentuk tag badge kecil.
+
+- 🎧 **Pemutar Musik Ringan**  
+  Musik lokal dengan kontrol progres, waktu, dan tombol play.
+
+- 🔗 **Link Cards Keren**  
+  Tautan penting (bot, WA channel, GitHub) ditampilkan dalam kartu bergaya minimalis dengan efek hover interaktif.
+
+- 🌀 **Loader Smooth**  
+  Animasi loading halus saat pertama masuk ke website, memberikan transisi yang lebih profesional.
+
+- 💧 **Partikel Mahkota**  
+  Efek visual partikel kecil jatuh dari mahkota saat bersinar terang, menambahkan nuansa magis.
+
+- 🔒 **Watermark Tersembunyi**  
+  Teks watermark disisipkan dalam HTML sebagai pengenal orisinalitas kreator.
 
 ---
 
-## 🌈 Teknologi yang Digunakan
+## 📸 Cuplikan
 
-- [Tailwind CSS](https://tailwindcss.com)
-- [Font Awesome](https://fontawesome.com)
-- [Google Fonts (Poppins)](https://fonts.google.com/specimen/Poppins)
-- Pure HTML & CSS (tanpa framework JS besar)
+![Preview Profile](https://files.catbox.moe/xdy8jt.jpg)
 
 ---
 
-## 🔧 Cara Menjalankan
+## 🔧 Stack Teknologi
 
-Kamu bisa meng-clone repo ini dan langsung buka `index.html` di browser:
+| Teknologi | Deskripsi |
+|----------|------------|
+| 💨 Tailwind CSS | Styling modern utility-first |
+| 🌐 HTML | Struktur dasar situs |
+| 🧠 JavaScript | Toggle tema, music player, countdown |
+| 🎨 Font Awesome | Ikon-ikon UI |
+| 🖋️ Google Fonts | Font Poppins sebagai default |
 
+---
+
+## ⚙️ Cara Menjalankan
+
+### 1. Clone repository
 ```bash
 git clone https://github.com/username/lexion-portfolio.git
 cd lexion-portfolio
-open index.html
 
-Atau upload ke Vercel, Netlify, atau server hosting kamu.
+2. Jalankan di browser
 
-
----
-
-📆 Birthday Countdown
-
-Ulang tahun dihitung mundur dari hari ini menuju:
-
-🗓️ 21 Februari 2026
-Ditampilkan di UI dengan badge countdown otomatis.
+Buka file index.html secara langsung melalui browser favorit kamu. Tidak membutuhkan server atau build tools.
 
 
 ---
 
-🔒 Lisensi
+🔐 Lisensi
 
-Proyek ini menggunakan lisensi MIT License. Silakan baca file LICENSE untuk informasi lebih lanjut.
+Kode sumber ini dirilis di bawah lisensi MIT.
+Silakan gunakan, ubah, atau distribusikan ulang dengan tetap mencantumkan kredit ke pemilik asli.
+Lihat file LICENSE untuk detail lengkapnya.
 
 
 ---
 
-👤 Creator
+👤 Tentang Creator
 
 Septian (Lee Xiao Jun)
-🔗 Website
-🐱‍🏍 Hobi: Music 🎵 | Coding 💻 | Gaming 🎮 | Cat Dad 🐱
+
+> Pembuat visual digital yang suka musik, kucing, dan eksplorasi teknologi web.
+
+
+
+🌐 Website
+🐈 Hobi: Coding 💻 • Musik 🎶 • Gaming 🎮 • Cat Dad 🐾
 
 
 ---
 
-📸 Preview
+💬 Catatan Tambahan
 
+Gambar dan audio menggunakan link eksternal. Pastikan koneksi aktif untuk pengalaman maksimal.
 
+Fitur mahkota dan particle hanya muncul saat profil berhasil dimuat.
 
-
----
-
-📝 Catatan
-
-Pastikan koneksi internet aktif agar semua CDN dan file eksternal bisa dimuat.
-
-Mahkota profil hanya muncul jika gambar profil berhasil dimuat.
+Disarankan pakai Chrome, Firefox, atau Safari terbaru.
 
 
 
 ---
 
-Kalau kamu ingin README-nya dalam bahasa Inggris juga, atau mau tambahkan badge GitHub otomatis (stars, forks, dll), tinggal bilang ya!
+Made with ❤️ by Lexion
+
+
 
