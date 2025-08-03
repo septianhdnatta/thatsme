@@ -1,67 +1,61 @@
-
-
 # 🌐 Lexion - Personal Portfolio Website
 
-Lexion adalah website portofolio pribadi modern dengan tampilan minimalis dan interaktif. Dibangun menggunakan HTML, Tailwind CSS, dan JavaScript, website ini mendukung **tema terang/gelap**, animasi badge, integrasi media sosial, serta pemutar musik sederhana.
+Lexion adalah website portofolio pribadi bergaya modern, dibangun menggunakan HTML, Tailwind CSS, dan JavaScript. Website ini menampilkan identitas digital secara interaktif, mendukung GIF sebagai profil, pemutar musik, mode gelap/terang, serta badge animasi.
+
+![Screenshot](https://your-preview-image-url.com) <!-- Ganti URL dengan preview yang kamu host -->
+
+---
 
 ## ✨ Fitur Utama
 
-- 🎨 **Light/Dark Mode Toggle**  
-  Pengguna dapat memilih tema terang atau gelap melalui dropdown toggle dengan ikon.
+- 🌗 **Light / Dark Mode Toggle**
+- 🖼️ **GIF Profile Support**
+- 🎵 **Music Player (Customizable Track)**
+- 💫 **Animated Badges dengan Emoji & Ikon**
+- 🔗 **Link Cards Interaktif (Whatsapp, Bot, GitHub)**
+- ✅ **Verified Badge di Samping Nama**
 
-- 🖼️ **Profile dengan GIF Support**  
-  Gambar profil mendukung format GIF agar lebih ekspresif dan dinamis.
+---
 
-- 📇 **Link Cards**  
-  Kartu tautan ke berbagai sumber (bot, WhatsApp Channel, GitHub, dll) yang adaptif terhadap tema dan memiliki gaya interaktif.
+## 📁 Struktur Proyek
 
-- 🎵 **Music Player**  
-  Pemutar lagu ringan dengan kontrol play/pause, progress bar, dan waktu berjalan.
+📦 lexion-portfolio/ ┣ 📄 index.html ┣ 📄 README.md ┣ 📄 LICENSE ┗ 📂 assets/ ┣ 📁 images/ ┗ 📁 audio/
 
-- 🏷️ **Badge Interaktif**  
-  Badge dengan animasi mengkilap dan ikon lucu yang menggambarkan kepribadian pengguna.
+---
 
-- ✅ **Verified Badge**  
-  Lencana verifikasi di samping nama profil pengguna.
+## 🚀 Cara Menjalankan
 
-## 📁 Struktur Folder
-
-📦project-root ┣ 📄 index.html ┣ 📄 README.md ┗ 📂 assets (opsional untuk gambar atau musik lokal)
-
-## 🚀 Cara Menggunakan
-
-1. **Clone repositori** (jika dari GitHub):
+1. Clone repositori ini:
    ```bash
    git clone https://github.com/username/lexion-portfolio.git
    cd lexion-portfolio
 
-2. Buka langsung index.html di browser:
-
-Tidak membutuhkan server lokal.
-
-Kompatibel dengan semua browser modern.
+2. Buka index.html di browser.
+Tidak memerlukan instalasi tambahan atau server lokal.
 
 
 
 
-🔧 Kustomisasi
+---
 
-Ubah profil: ganti URL gambar profil di bagian <img src="...">.
+🛠️ Kustomisasi
 
-Tambah link card baru: salin dan edit struktur <a class="link-card">...</a>.
+Elemen	Lokasi	Cara Ubah
 
-Ubah warna tema: modifikasi nilai --primary-color dan --secondary-color di dalam CSS.
+Gambar Profil	<img src="..." />	Ganti URL gambar (termasuk GIF)
+Lagu	<audio src="..." />	Ganti URL file musik
+Badge	<span class="shiny-badge">	Tambah/ubah teks dan ikon di HTML
+Warna	CSS --primary-color, --secondary-color	Ganti di bagian <style>
 
-Ganti lagu: ubah src audio di <audio src="..."></audio>.
 
 
-📷 Preview
-
- <!-- Ganti dengan URL tangkapan layar -->
+---
 
 📜 Lisensi
 
-Proyek ini bebas digunakan untuk keperluan pribadi atau modifikasi pribadi. Tidak untuk dijual kembali secara langsung.
+MIT License © 2025 Septian (Lee Xiao Jun)
+
+Silakan digunakan, dimodifikasi, dan dikembangkan secara bebas.
 
 
 ---
@@ -71,6 +65,3 @@ Proyek ini bebas digunakan untuk keperluan pribadi atau modifikasi pribadi. Tida
 
 
 ---
-
-
-
