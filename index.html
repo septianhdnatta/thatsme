@@ -287,6 +287,10 @@ body {
   </style>
 </head>
 <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
+<!-- Loader -->
+<div id="preloader" class="fixed inset-0 flex items-center justify-center bg-white dark:bg-gray-900 z-50">
+  <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-blue-500"></div>
+</div>
   <!-- Banner -->
   <div class="banner relative">
     <div class="menu-toggle" onclick="toggleDropdown()">
@@ -475,5 +479,10 @@ body {
     const secs = Math.floor(seconds % 60) || 0;
     return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
   }
+
+    window.addEventListener("load", () => {
+    const loader = document.getElementById("preloader");
+    if (loader) loader.style.display = "none";
+  });
   </script></body>
 </html>
