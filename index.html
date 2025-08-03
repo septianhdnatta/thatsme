@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" class="transition-colors duration-300">
+<!DOCTYPE html><html lang="en" class="transition-colors duration-300">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,277 +11,177 @@
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #10b981;
+}
 
-    :root {
-      --primary-color: #4f46e5;
-      --secondary-color: #10b981;
-    }
+body {
+  font-family: 'Poppins', sans-serif;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f8fafc;
-      color: #334155;
-    }
+.banner {
+  height: 200px;
+  background-image: url('https://files.catbox.moe/73l02p.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-    .dark body {
-      background-color: #0f172a;
-      color: #e2e8f0;
-    }
+.link-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
 
-    .banner {
-      height: 200px;
-      background-image: url('https://files.catbox.moe/73l02p.jpg');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+.link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
 
-    .link-card {
-      transition: all 0.3s ease;
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-    }
+.link-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+}
 
-    .link-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-    }
+.social-icon {
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: var(--primary-color);
+}
 
-    .link-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 5px;
-      height: 100%;
-      background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-    }
-    
-    .social-icon {
-      transition: all 0.3s ease;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background-color: white;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      color: var(--primary-color);
-    }
+.social-icon:hover {
+  transform: scale(1.1);
+  color: white;
+  background-color: var(--primary-color);
+}
 
-    .social-icon:hover {
-      transform: scale(1.1);
-      color: white;
-      background-color: var(--primary-color);
-    }
+.menu-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  color: white;
+  cursor: pointer;
+}
 
-    .menu-toggle {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      z-index: 10;
-      color: white;
-      cursor: pointer;
-    }
+.badge,
+.shiny-badge {
+  border-radius: 9999px;
+  padding: 3px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
 
-    .badge,
-    .shiny-badge {
-      border-radius: 9999px;
-      padding: 3px 12px;
-      font-size: 12px;
-      font-weight: 600;
-    }
+.shiny-badge {
+  position: relative;
+  overflow: hidden;
+  background-color: #f1f5f9;
+  color: #334155;
+  z-index: 0;
+}
 
-    .shiny-badge {
-      position: relative;
-      overflow: hidden;
-      background-color: #f1f5f9;
-      color: #334155;
-      z-index: 0;
-    }
+.dark .shiny-badge {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
 
-    .shiny-badge::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -75%;
-      width: 150%;
-      height: 100%;
-      background: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.5) 50%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      animation: shine 2.5s infinite;
-      z-index: 1;
-    }
+.shiny-badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shine 2.5s infinite;
+  z-index: 1;
+}
 
-    .shiny-badge > * {
-      position: relative;
-      z-index: 2;
-    }
+.shiny-badge > * {
+  position: relative;
+  z-index: 2;
+}
 
-    @keyframes shine {
-      0% {
-        left: -75%;
-      }
-      100% {
-        left: 100%;
-      }
-    }
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 100%;
+  }
+}
 
-    .dropdown {
-      position: absolute;
-      top: 3rem;
-      right: 1rem;
-      background-color: white;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      z-index: 30;
-      overflow: hidden;
-    }
+.dropdown {
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 30;
+  overflow: hidden;
+}
 
-    .dark .dropdown {
-      background-color: #1e293b;
-      color: white;
-    }
+.dark .dropdown {
+  background-color: #1e293b;
+  color: white;
+}
 
-    .dropdown-item {
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      white-space: nowrap;
-    }
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
 
-    .dropdown-item:hover {
-      background-color: #f3f4f6;
-    }
+.dropdown-item:hover {
+  background-color: #f3f4f6;
+}
 
-    .dark .dropdown-item:hover {
-      background-color: #334155;
-    }
-    /* Music Player Styles */
-    .music-player {
-      background-color: white;
-      border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      width: 100%;
-    }
+.dark .dropdown-item:hover {
+  background-color: #334155;
+}
 
-    .player-controls {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .music-title {
-      font-weight: 600;
-      font-size: 16px;
-      color: #333;
-      text-align: center;
-      margin: 5px 0;
-    }
-
-    .progress-container {
-      width: 100%;
-      height: 4px;
-      background: #e0e0e0;
-      border-radius: 2px;
-      cursor: pointer;
-      margin: 5px 0;
-      position: relative;
-    }
-
-    .progress-bar {
-      height: 100%;
-      background: var(--primary-color);
-      border-radius: 2px;
-      width: 0%;
-      transition: width 0.1s linear;
-    }
-
-    .time-display {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      color: #666;
-      margin-top: 5px;
-      width: 100%;
-    }
-
-    .cover-image {
-      width: 80px;
-      height: 80px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      flex-shrink: 0;
-    }
-
-    .cover-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .play-button {
-      background-color: transparent;
-      color: var(--primary-color);
-      border: none;
-      width: auto;
-      height: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      padding: 0;
-      margin-right: 10px;
-      font-size: 1.25rem;
-    }
-
-    .play-button:hover {
-      color: var(--secondary-color);
-    }
   </style>
 </head>
-<body class="transition-colors duration-300">
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
   <!-- Banner -->
   <div class="banner relative">
-    <!-- Theme Toggle -->
     <div class="menu-toggle" onclick="toggleDropdown()">
       <i class="fas fa-ellipsis-v text-white text-xl"></i>
     </div>
-    <!-- Dropdown -->
     <div id="theme-menu" class="dropdown hidden">
       <div class="dropdown-item" onclick="setTheme('light')">🌞 Light</div>
       <div class="dropdown-item" onclick="setTheme('dark')">🌙 Dark</div>
     </div>
-  </div>
-
-  <!-- Profile Image -->
-  <div class="flex justify-center relative -mt-16 z-20">
+  </div>  <!-- Profile Image -->  <div class="flex justify-center relative -mt-16 z-20">
     <div class="w-32 h-32 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg border-4 border-white dark:border-gray-800">
       <img src="https://files.catbox.moe/xdy8jt.jpg" alt="Profile" class="w-full h-full object-cover rounded-full"
            onerror="this.onerror=null;this.src='https://placehold.co/300x300?text=Profile+Photo'" />
     </div>
-  </div>
-
-  <!-- Main Content -->
-  <div class="container mx-auto px-4 pt-6 pb-8 max-w-md">
-    <!-- Profile Info -->
+  </div>  <!-- Main Content -->  <div class="container mx-auto px-4 pt-6 pb-8 max-w-md">
     <div class="text-center mb-8">
-      <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-1 flex items-center justify-center gap-1">
+      <h2 class="text-xl font-bold mb-1 flex items-center justify-center gap-1">
         Septian (Lee Xiao Jun)
         <i class="fas fa-circle-check text-blue-500 text-base" title="Verified"></i>
       </h2>
@@ -304,64 +203,16 @@
           <i class="fas fa-cat text-yellow-500"></i> Cat Dad 🐱
         </span>
       </div>
-
-      <!-- Social Links -->
       <div class="flex justify-center space-x-4 mt-4">
-        <a href="#telegram" class="social-icon hover:bg-blue-400">
+        <a href="#telegram" class="social-icon">
           <i class="fab fa-telegram"></i>
         </a>
-        <a href="#instagram" class="social-icon hover:bg-gradient-to-r from-purple-500 to-pink-500">
+        <a href="#instagram" class="social-icon">
           <i class="fab fa-instagram"></i>
         </a>
       </div>
     </div>
-  </div>
-
-<!-- Music Player Section -->
-    <div class="music-player mb-8">
-      <div class="cover-image">
-        <img src="https://files.catbox.moe/tnjqna.jpg" alt="Cover Image">
-      </div>
-      <div class="player-controls">
-        <audio id="audio-player" src="https://files.catbox.moe/vfbecq.mp3"></audio>
-        <div class="music-title">Everything U Are - Hindia</div>
-        <div class="flex items-center w-full mt-2">
-          <button class="play-button" onclick="togglePlay()">
-            <i class="fas fa-play"></i>
-          </button>
-          <div class="flex-1 px-3">
-            <div class="progress-container" onclick="seek(event)">
-              <div class="progress-bar" id="progress-bar"></div>
-            </div>
-            <div class="time-display">
-              <span id="current-time">0:00</span>
-              <span id="duration">0:00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-  <!-- Link Cards -->
-    <div class="space-y-4 mb-8">
-      <!-- Hayase Yuuka (Bot) -->
-      <a href="#featured" class="block">
-        <div class="link-card bg-white p-5 flex items-center gap-4">
-          <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-indigo-100 to-green-100 flex items-center justify-center text-indigo-500">
-            <i class="fas fa-star fa-lg"></i>
-          </div>
-          <div>
-            <h3 class="font-semibold text-gray-800">Hayase Yuuka (Bot)</h3>
-            <p class="text-sm text-gray-500">Click for use bot</p>
-          </div>
-          <div class="ml-auto text-gray-400">
-            <i class="fas fa-chevron-right"></i>
-          </div>
-        </div>
-      </a>
-
-  <!-- Script -->
-  <script>
+  </div>  <!-- Script -->  <script>
     const themeMenu = document.getElementById('theme-menu');
 
     function toggleDropdown() {
@@ -380,11 +231,9 @@
       themeMenu.classList.add('hidden');
     }
 
-    // On page load, apply saved theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       document.documentElement.classList.toggle('dark', savedTheme === 'dark');
     }
-  </script>
-</body>
+  </script></body>
 </html>
