@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en" class="transition-colors duration-300">
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-300">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,32 +12,35 @@
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');:root {
-  --primary-color: #4f46e5;
-  --secondary-color: #10b981;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f8fafc;
-  color: #334155;
-}
-.dark body {
-  background-color: #0f172a;
-  color: #e2e8f0;
-}
+    :root {
+      --primary-color: #4f46e5;
+      --secondary-color: #10b981;
+    }
 
-.banner {
-  height: 200px;
-  background-image: url('https://files.catbox.moe/73l02p.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fafc;
+      color: #334155;
+    }
 
- .social-icon {
+    .dark body {
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+
+    .banner {
+      height: 200px;
+      background-image: url('https://files.catbox.moe/73l02p.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .social-icon {
       transition: all 0.3s ease;
       width: 40px;
       height: 40px;
@@ -53,61 +57,184 @@ body {
       transform: scale(1.1);
       color: white;
       background-color: var(--primary-color);
-    }   
-.menu-toggle {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 10;
-  color: white;
-  cursor: pointer;
-}
+    }
 
-.badge,
-.shiny-badge {
-  border-radius: 9999px;
-  padding: 3px 12px;
-  font-size: 12px;
-  font-weight: 600;
-}
+    .menu-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 10;
+      color: white;
+      cursor: pointer;
+    }
 
-.shiny-badge {
-  position: relative;
-  overflow: hidden;
-  background-color: #f1f5f9;
-  color: #334155;
-  z-index: 0;
-}
+    .badge,
+    .shiny-badge {
+      border-radius: 9999px;
+      padding: 3px 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
 
-.shiny-badge::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 150%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.5) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  animation: shine 2.5s infinite;
-  z-index: 1;
-}
+    .shiny-badge {
+      position: relative;
+      overflow: hidden;
+      background-color: #f1f5f9;
+      color: #334155;
+      z-index: 0;
+    }
 
-.shiny-badge > * {
-  position: relative;
-  z-index: 2;
-}
+    .shiny-badge::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 150%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: shine 2.5s infinite;
+      z-index: 1;
+    }
 
-@keyframes shine {
-  0% {
-    left: -75%;
-  }
-  100% {
-    left: 100%;
-  }
+    .shiny-badge > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes shine {
+      0% {
+        left: -75%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 3rem;
+      right: 1rem;
+      background-color: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 30;
+      overflow: hidden;
+    }
+
+    .dark .dropdown {
+      background-color: #1e293b;
+      color: white;
+    }
+
+    .dropdown-item {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f3f4f6;
+    }
+
+    .dark .dropdown-item:hover {
+      background-color: #334155;
+    }
+  </style>
+</head>
+<body class="transition-colors duration-300">
+  <!-- Banner -->
+  <div class="banner relative">
+    <!-- Theme Toggle -->
+    <div class="menu-toggle" onclick="toggleDropdown()">
+      <i class="fas fa-ellipsis-v text-white text-xl"></i>
+    </div>
+    <!-- Dropdown -->
+    <div id="theme-menu" class="dropdown hidden">
+      <div class="dropdown-item" onclick="setTheme('light')">🌞 Light</div>
+      <div class="dropdown-item" onclick="setTheme('dark')">🌙 Dark</div>
+    </div>
+  </div>
+
+  <!-- Profile Image -->
+  <div class="flex justify-center relative -mt-16 z-20">
+    <div class="w-32 h-32 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg border-4 border-white dark:border-gray-800">
+      <img src="https://files.catbox.moe/xdy8jt.jpg" alt="Profile" class="w-full h-full object-cover rounded-full"
+           onerror="this.onerror=null;this.src='https://placehold.co/300x300?text=Profile+Photo'" />
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-4 pt-6 pb-8 max-w-md">
+    <!-- Profile Info -->
+    <div class="text-center mb-8">
+      <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-1 flex items-center justify-center gap-1">
+        Septian (Lee Xiao Jun)
+        <i class="fas fa-circle-check text-blue-500 text-base" title="Verified"></i>
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 mb-4">Hobby</p>
+      <p class="text-gray-700 dark:text-gray-300 px-4 text-sm">
+        Building beautiful digital experiences and sharing knowledge about web technologies.
+      </p>
+      <div class="flex justify-center mt-3 gap-2 flex-wrap">
+        <span class="badge shiny-badge">
+          <i class="fas fa-music text-indigo-500"></i> Music Lover 🎵
+        </span>
+        <span class="badge shiny-badge">
+          <i class="fas fa-code text-green-500"></i> Dev 💻
+        </span>
+        <span class="badge shiny-badge">
+          <i class="fas fa-gamepad text-pink-500"></i> Gamer 🎮
+        </span>
+        <span class="badge shiny-badge">
+          <i class="fas fa-cat text-yellow-500"></i> Cat Dad 🐱
+        </span>
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex justify-center space-x-4 mt-4">
+        <a href="#telegram" class="social-icon hover:bg-blue-400">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="#instagram" class="social-icon hover:bg-gradient-to-r from-purple-500 to-pink-500">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const themeMenu = document.getElementById('theme-menu');
+
+    function toggleDropdown() {
+      themeMenu.classList.toggle('hidden');
+    }
+
+    function setTheme(mode) {
+      const html = document.documentElement;
+      if (mode === 'dark') {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+      themeMenu.classList.add('hidden');
+    }
+
+    // On page load, apply saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    }
+  </script>
+</body>
+</html>  }
 }
 
   </style>
