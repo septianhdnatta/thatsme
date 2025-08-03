@@ -3,13 +3,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lexion - Portofolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script>
     tailwind.config = {
       darkMode: 'class'
     };
   </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');:root {
   --primary-color: #4f46e5;
@@ -33,13 +33,6 @@ body {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.theme-toggle {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  z-index: 30;
 }
 
 .badge {
@@ -136,48 +129,22 @@ body {
 
   </style>
 </head>
-<body class="transition-colors duration-300">
-  <!-- Banner Section -->
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200">
   <div class="banner relative">
-    <!-- Dropdown for Theme -->
-    <div class="theme-toggle">
-      <div class="relative inline-block text-left">
-        <button id="theme-button" class="p-2 text-white bg-black/40 rounded-full hover:bg-black/60">
-          <i class="fas fa-ellipsis-v"></i>
-        </button>
-        <div id="theme-menu" class="hidden absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 z-40">
-          <div class="py-1 text-sm text-gray-700 dark:text-gray-200">
-            <button onclick="setTheme('light')" class="w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700">
-              <i class="fas fa-sun mr-2"></i> Light
-            </button>
-            <button onclick="setTheme('dark')" class="w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700">
-              <i class="fas fa-moon mr-2"></i> Dark
-            </button>
-          </div>
-        </div>
-      </div>
+    <div class="absolute top-3 right-3 z-30">
+      <button onclick="toggleDarkMode()" class="text-white bg-black/40 hover:bg-black/60 rounded-full p-2 focus:outline-none">
+        <i class="fas fa-ellipsis-v"></i>
+      </button>
     </div>
-  </div>  <!-- Remaining content... -->  <script>
-    const themeButton = document.getElementById('theme-button');
-    const themeMenu = document.getElementById('theme-menu');
-    themeButton.addEventListener('click', () => {
-      themeMenu.classList.toggle('hidden');
-    });
-
-    function setTheme(mode) {
-      if (mode === 'dark') {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      }
-      themeMenu.classList.add('hidden');
+  </div>  <!-- Content continues as usual -->  <script>
+    if (localStorage.theme === 'dark') {
+      document.documentElement.classList.add('dark');
     }
 
-    // Load saved theme
-    if (localStorage.getItem('theme') === 'dark') {
-      document.documentElement.classList.add('dark');
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
     }
   </script></body>
 </html>
