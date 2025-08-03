@@ -1,0 +1,323 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Linktree</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #10b981;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            color: #334155;
+            transition: background-color 0.3s ease;
+        }
+        
+        body.dark {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        
+        .dark .text-gray-800 {
+            color: #e2e8f0;
+        }
+        
+        .dark .text-gray-700 {
+            color: #cbd5e1;
+        }
+        
+        .dark .text-gray-600 {
+            color: #94a3b8;
+        }
+        
+        .dark .text-gray-500 {
+            color: #64748b;
+        }
+        
+        .dark .link-card {
+            background-color: #1e293b;
+        }
+        
+        .dark .badge {
+            background-color: #334155;
+            color: #e2e8f0;
+        }
+        
+        .banner {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .banner-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+        }
+        
+        .banner-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px);
+            background-size: 15px 15px;
+            opacity: 0.6;
+        }
+        
+        .profile-img-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            width: 100%;
+        }
+
+        .banner {
+            position: relative;
+            padding-bottom: 100px;
+        }
+        
+        .profile-img {
+            border: 4px solid white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .link-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1);
+            color: white;
+            background-color: var(--primary-color);
+        }
+        
+        .badge {
+            background-color: #f1f5f9;
+            border-radius: 9999px;
+            padding: 3px 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="fixed top-4 right-4 z-50 p-2 rounded-full bg-white/20 backdrop-blur-sm">
+        <i class="fas fa-moon text-white"></i>
+    </button>
+
+    <!-- Banner Section -->
+    <div class="banner relative">
+        <div class="banner-pattern"></div>
+        <div class="profile-img-container">
+            <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center profile-img mx-auto">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b863de17-dd2e-4ef5-831b-c5085d99649a.png" alt="Professional headshot of a creative developer with a modern background" class="w-full h-full rounded-full object-cover" onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d3cdaebf-f9c5-4922-8956-7ea110aa0618.png'"/>
+            </div>
+        </div>
+        <div class="banner-content text-white absolute bottom-4 left-0 right-0">
+            <h1 class="text-2xl font-bold">My Creative Portfolio</h1>
+            <p class="text-white/80">Explore my work and connect with me</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 max-w-md">
+        <!-- Profile Info -->
+        <div class="text-center mb-8">
+            <h2 class="text-xl font-bold text-gray-800 mb-1">John Doe</h2>
+            <p class="text-gray-600 mb-4">Digital Creator & Web Developer</p>
+            <p class="text-gray-700 px-4 text-sm">Building beautiful digital experiences and sharing knowledge about web technologies.</p>
+            
+            <div class="flex justify-center mt-3 gap-2">
+                <span class="badge">Available for freelance</span>
+                <span class="badge">Open for collaboration</span>
+            </div>
+        </div>
+
+        <!-- Link Cards Section -->
+        <div class="space-y-4 mb-8">
+            <!-- Feature Link -->
+            <a href="#featured" class="block">
+                <div class="link-card bg-white p-5 flex items-center gap-4 relative">
+                    <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-indigo-100 to-green-100 flex items-center justify-center text-indigo-500">
+                        <i class="fas fa-star fa-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Featured Projects</h3>
+                        <p class="text-sm text-gray-500">See my best work</p>
+                    </div>
+                    <div class="ml-auto text-gray-400">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Portfolio Link -->
+            <a href="#portfolio" class="block">
+                <div class="link-card bg-white p-5 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center text-blue-500">
+                        <i class="fas fa-briefcase fa-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Full Portfolio</h3>
+                        <p class="text-sm text-gray-500">Browse all my projects</p>
+                    </div>
+                    <div class="ml-auto text-gray-400">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Resume Link -->
+            <a href="#resume" class="block">
+                <div class="link-card bg-white p-5 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-green-100 to-teal-100 flex items-center justify-center text-green-500">
+                        <i class="fas fa-file-alt fa-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">My Resume</h3>
+                        <p class="text-sm text-gray-500">Download my CV</p>
+                    </div>
+                    <div class="ml-auto text-gray-400">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Contact Link -->
+            <a href="#contact" class="block">
+                <div class="link-card bg-gradient-to-r from-blue-600 to-indigo-600 p-5 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center text-white">
+                        <i class="fas fa-envelope fa-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-white">Contact Me</h3>
+                        <p class="text-sm text-white/80">Get in touch</p>
+                    </div>
+                    <div class="ml-auto text-white">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex justify-center space-x-4 mb-8">
+            <a href="#twitter" class="social-icon hover:bg-blue-400">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#github" class="social-icon hover:bg-gray-800">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="#linkedin" class="social-icon hover:bg-blue-600">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#instagram" class="social-icon hover:bg-gradient-to-r from-purple-500 to-pink-500">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#dribbble" class="social-icon hover:bg-pink-500">
+                <i class="fab fa-dribbble"></i>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-gray-500 text-xs">
+            <p>© 2023 My Portfolio. All rights reserved.</p>
+            <p class="mt-1">Made with ❤️ by John Doe</p>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        function setTheme(theme) {
+            document.body.classList.toggle('dark', theme === 'dark');
+            localStorage.setItem('theme', theme);
+            themeToggle.innerHTML = theme === 'dark' 
+                ? '<i class="fas fa-sun text-yellow-300"></i>' 
+                : '<i class="fas fa-moon text-white"></i>';
+        }
+        
+        // Check saved theme or prefered scheme
+        const currentTheme = localStorage.getItem('theme') || 
+                           (prefersDark.matches ? 'dark' : 'light');
+        setTheme(currentTheme);
+        
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            const newTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+        
+        // Simple animation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.link-card');
+            
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+                
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+        });
+    </script>
+</body>
+</html>
