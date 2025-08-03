@@ -1,3 +1,8 @@
+Berikut adalah versi terbaru dari README.md untuk proyek portofolio kamu, yang mencakup semua fitur terbaru seperti tema gelap/terang, loader, mahkota animasi, musik player, countdown ulang tahun, dan lainnya:
+
+
+---
+
 # 🌐 Lexion - Personal Web Portfolio
 
 Selamat datang di website portofolio **Lexion**! Ini adalah personal site yang dibuat dengan **Tailwind CSS**, HTML, dan sedikit JavaScript. Situs ini menampilkan profil pribadi, media sosial, tautan penting, serta fitur interaktif modern.
@@ -33,7 +38,7 @@ Selamat datang di website portofolio **Lexion**! Ini adalah personal site yang d
 
 Kamu bisa meng-clone repo ini dan langsung buka `index.html` di browser:
 
-bash
+```bash
 git clone https://github.com/username/lexion-portfolio.git
 cd lexion-portfolio
 open index.html
@@ -85,3 +90,6 @@ Mahkota profil hanya muncul jika gambar profil berhasil dimuat.
 
 
 ---
+
+Kalau kamu ingin README-nya dalam bahasa Inggris juga, atau mau tambahkan badge GitHub otomatis (stars, forks, dll), tinggal bilang ya!
+
