@@ -23,7 +23,7 @@
       color: #334155;
     }
 
-       .banner {
+.banner {
   height: 200px;
   background-image: url('https://files.catbox.moe/73l02p.jpg');
   background-size: cover;
@@ -178,12 +178,14 @@
   </style>
 </head>
 <body>
-      <div class="banner relative">
-  <div class="absolute inset-0 bg-black/40 z-10"></div> <!-- overlay -->
-  <div class="absolute bottom-6 left-0 w-full text-center text-white z-20 px-4">
-    <h1 class="text-2xl font-bold">My Creative Portfolio</h1>
-    <p class="text-white/80">Explore my work and connect with me</p>
-  </div>
+      <!-- Banner Section -->
+<div class="banner relative">
+    <!-- Tidak ada banner-pattern atau banner-content -->
+    <div class="flex justify-center profile-img-container">
+        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center profile-img">
+            <img src="https://placehold.co/300x300" alt="Profile Photo" class="w-full h-full rounded-full object-cover" />
+        </div>
+    </div>
 </div>
 
   <!-- Profile Image (outside banner) -->
