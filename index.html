@@ -40,6 +40,28 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
+    .link-card {
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .link-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .link-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    }
+    
     .social-icon {
       transition: all 0.3s ease;
       width: 40px;
@@ -206,6 +228,24 @@
       </div>
     </div>
   </div>
+
+  <!-- Link Cards -->
+    <div class="space-y-4 mb-8">
+      <!-- Hayase Yuuka (Bot) -->
+      <a href="#featured" class="block">
+        <div class="link-card bg-white p-5 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-indigo-100 to-green-100 flex items-center justify-center text-indigo-500">
+            <i class="fas fa-star fa-lg"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-800">Hayase Yuuka (Bot)</h3>
+            <p class="text-sm text-gray-500">Click for use bot</p>
+          </div>
+          <div class="ml-auto text-gray-400">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+      </a>
 
   <!-- Script -->
   <script>
