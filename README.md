@@ -2,7 +2,7 @@
 
 Lexion adalah website portofolio pribadi bergaya modern, dibangun menggunakan HTML, Tailwind CSS, dan JavaScript. Website ini menampilkan identitas digital secara interaktif, mendukung GIF sebagai profil, pemutar musik, mode gelap/terang, serta badge animasi.
 
-![Screenshot](https://your-preview-image-url.com) <!-- Ganti URL dengan preview yang kamu host -->
+![Screenshot](https://files.catbox.moe/1mh78d.jpg) <!-- Ganti URL dengan preview yang kamu host -->
 
 ---
 
