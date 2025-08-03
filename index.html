@@ -90,6 +90,81 @@
       color: white;
       background-color: var(--primary-color);
     }
+            /* Music Player Styles */
+        .music-player {
+            background-color: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .player-controls {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: 2px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .time-display {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .cover-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cover-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .play-button:hover {
+            background-color: var(--secondary-color);
+        }
   </style>
 </head>
 <body>
@@ -124,6 +199,27 @@
         <span class="badge">Open for collaboration</span>
       </div>
     </div>
+
+
+            <!-- Music Player Section -->
+        <div class="music-player mb-8">
+            <div class="cover-image">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/17d16e81-f1b6-4992-9610-4071946599c7.png" alt="Cover Image">
+            </div>
+            <div class="player-controls">
+                <audio id="audio-player" src="https://files.catbox.moe/he3dgx.mp3"></audio>
+                <button class="play-button" onclick="togglePlay()">
+                    <i class="fas fa-play"></i>
+                </button>
+                <div class="progress-container" onclick="seek(event)">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div class="time-display">
+                    <span id="current-time">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+        </div>
 
     <!-- Link Cards -->
     <div class="space-y-4 mb-8">
@@ -219,19 +315,70 @@
   </div>
 
   <!-- Entry Animation -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const cards = document.querySelectorAll('.link-card');
-      cards.forEach((card, index) => {
-        setTimeout(() => {
-          card.style.opacity = '1';
-          card.style.transform = 'translateY(0)';
-        }, index * 100);
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      });
-    });
-  </script>
+      <script>
+        // Simple animation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.link-card');
+            
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+                
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+        });
+
+        // Music player functionality
+        const audioPlayer = document.getElementById('audio-player');
+        const progressBar = document.getElementById('progress-bar');
+        const currentTimeDisplay = document.getElementById('current-time');
+        const durationDisplay = document.getElementById('duration');
+
+        function togglePlay() {
+            const playButton = document.querySelector('.play-button i');
+            
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playButton.classList.remove('fa-play');
+                playButton.classList.add('fa-pause');
+            } else {
+                audioPlayer.pause();
+                playButton.classList.remove('fa-pause');
+                playButton.classList.add('fa-play');
+            }
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        function updateProgress() {
+            const percent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            progressBar.style.width = `${percent}%`;
+            currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
+        }
+
+        function updateDuration() {
+            durationDisplay.textContent = formatTime(audioPlayer.duration);
+        }
+
+        function seek(e) {
+            const percent = e.offsetX / e.target.offsetWidth;
+            audioPlayer.currentTime = percent * audioPlayer.duration;
+        }
+
+        audioPlayer.addEventListener('timeupdate', updateProgress);
+        audioPlayer.addEventListener('loadedmetadata', updateDuration);
+        audioPlayer.addEventListener('ended', () => {
+            document.querySelector('.play-button i').classList.remove('fa-pause');
+            document.querySelector('.play-button i').classList.add('fa-play');
+        });
+    </script>
 </body>
 </html>
