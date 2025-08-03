@@ -37,7 +37,7 @@
 
 ## 📸 Cuplikan
 
-![Preview Profile](https://files.catbox.moe/xdy8jt.jpg)
+![Preview Profile](https://files.catbox.moe/k33u65.png)
 
 ---
 
