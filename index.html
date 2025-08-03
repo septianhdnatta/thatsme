@@ -548,29 +548,7 @@ body {
     return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
   }
 
-    function updateBirthdayCountdown() {
-    const today = new Date();
-    const birthday = new Date("2026-02-21");
-    
-    // Reset jam agar tepat
-    birthday.setHours(0, 0, 0, 0);
-    today.setHours(0, 0, 0, 0);
-
-    const timeDiff = birthday - today;
-    const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-
-    const el = document.getElementById("birthday-countdown");
-    if (daysLeft > 0) {
-      el.textContent = `🎉 ${daysLeft} hari lagi menuju ulang tahun (21 Februari 2026)`;
-    } else if (daysLeft === 0) {
-      el.textContent = `🎉 Hari ini ulang tahunmu! Selamat! 🎂`;
-    } else {
-      el.textContent = `🎂 Ulang tahun sudah lewat tahun ini.`;
-    }
-  }
-
-  updateBirthdayCountdown();
-
+  
   
   window.addEventListener("load", () => {
     setTimeout(() => {
@@ -583,5 +561,31 @@ body {
       }
     }, 1000); // delay before fade-out
   });
+
+
+
+function updateBirthdayCountdown() {
+    const today = new Date();
+    const birthday = new Date("2026-02-21");
+
+    birthday.setHours(0, 0, 0, 0);
+    today.setHours(0, 0, 0, 0);
+
+    const diffTime = birthday - today;
+    const daysLeft = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    const el = document.getElementById("birthday-countdown-text");
+
+    if (daysLeft > 0) {
+      el.textContent = `${daysLeft} Days to Birthday`;
+    } else if (daysLeft === 0) {
+      el.textContent = `🎂 Today is your Birthday!`;
+    } else {
+      el.textContent = `🎉 Birthday Passed`;
+    }
+  }
+
+  updateBirthdayCountdown();
+
+    
   </script></body>
 </html>
