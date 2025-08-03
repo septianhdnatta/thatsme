@@ -23,24 +23,31 @@
       color: #334155;
     }
 
-    .banner {
-      height: 200px;
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .banner-pattern {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-      background-size: 15px 15px;
-      opacity: 0.6;
-    }
+        .banner {
+            height: 200px;
+            background: url('https://files.catbox.moe/73l02p.jpg') center/cover;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .banner-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+        }
+        
+        .banner-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px);
+            background-size: 15px 15px;
+            opacity: 0.6;
+        }
 
     .badge {
       background-color: #f1f5f9;
@@ -177,14 +184,12 @@
   </style>
 </head>
 <body>
-  <!-- Banner -->
-  <div class="banner relative">
-    <div class="banner-pattern"></div>
-    <div class="absolute bottom-6 left-0 w-full text-center text-white px-4">
-      <h1 class="text-2xl font-bold">My Creative Portfolio</h1>
-      <p class="text-white/80">Explore my work and connect with me</p>
-    </div>
-  </div>
+      <!-- Banner Section -->
+    <div class="banner relative">
+        <div class="banner-content text-white">
+            <h1 class="text-2xl font-bold drop-shadow-md">My Creative Portfolio</h1>
+            <p class="text-white/80 drop-shadow-md">Explore my work and connect with me</p>
+        </div>
 
   <!-- Profile Image (outside banner) -->
   <div class="flex justify-center relative -mt-16 z-20">
