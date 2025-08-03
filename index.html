@@ -1,14 +1,3 @@
-
-
-<!---These changes will:
-1. Reduce banner height from 200px to 180px
-2. Position the profile image container absolutely 140px from the top of the banner
-3. Remove the "My Creative Portfolio" heading completely
-4. Keep the "Explore my work..." text at the bottom of the banner
-5. Set overflow to visible on the banner to prevent image clipping
-6. Add bottom margin to banner for spacing
-7. Move the profile image container inside the banner div but position it to appear slightly below the banner bottomHere is the updated HTML content after applying above edits: --->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,37 +21,6 @@
             margin: 0;
             padding: 0;
             color: #334155;
-            transition: background-color 0.3s ease;
-        }
-        
-        body.dark {
-            background-color: #0f172a;
-            color: #e2e8f0;
-        }
-        
-        .dark .text-gray-800 {
-            color: #e2e8f0;
-        }
-        
-        .dark .text-gray-700 {
-            color: #cbd5e1;
-        }
-        
-        .dark .text-gray-600 {
-            color: #94a3b8;
-        }
-        
-        .dark .text-gray-500 {
-            color: #64748b;
-        }
-        
-        .dark .link-card {
-            background-color: #1e293b;
-        }
-        
-        .dark .badge {
-            background-color: #334155;
-            color: #e2e8f0;
         }
         
         .banner {
@@ -92,19 +50,21 @@
         }
         
         .profile-img-container {
-            margin-top: 20px;
-            text-align: center;
-            position: relative;
+            position: absolute;
+            bottom: -40px; /* Adjusted to lower the profile image */
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 10;
-        }
-
-        .banner {
-            position: relative;
-            padding-bottom: 20px;
+            width: 100px; /* Set a fixed width for the container */
+            height: 100px; /* Set a fixed height for the container */
+            overflow: hidden; /* Ensure the image stays within the bounds */
         }
         
         .profile-img {
-            border: 4px solid white;
+            width: 100%; /* Make the image fill the container */
+            height: 100%; /* Make the image fill the container */
+            border-radius: 50%; /* Ensure the image is rounded */
+            object-fit: cover; /* Cover the container without distortion */
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
         
@@ -159,20 +119,15 @@
     </style>
 </head>
 <body>
-    <!-- Theme Toggle -->
-    <button id="theme-toggle" class="fixed top-4 right-4 z-50 p-2 rounded-full bg-white/20 backdrop-blur-sm">
-        <i class="fas fa-moon text-white"></i>
-    </button>
-
     <!-- Banner Section -->
     <div class="banner relative">
         <div class="banner-pattern"></div>
-        <div class="banner-content text-white absolute bottom-4 left-0 right-0">
+        <div class="banner-content text-white">
             <p class="text-white/80">Explore my work and connect with me</p>
         </div>
-        <div class="profile-img-container">
-        <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center profile-img mx-auto">
-            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b863de17-dd2e-4ef5-831b-c5085d99649a.png" alt="Professional headshot of a creative developer with a modern background" class="w-full h-full rounded-full object-cover" onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d3cdaebf-f9c5-4922-8956-7ea110aa0618.png'"/>
+        
+        <div class="flex justify-center profile-img-container">
+            <img src="https://placehold.co/300x300" alt="Professional headshot of a creative developer with a modern background" class="profile-img" onerror="this.onerror=null;this.src='https://placehold.co/300x300?text=Profile+Photo'"/>
         </div>
     </div>
 
@@ -284,29 +239,6 @@
     </div>
 
     <script>
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-        
-        function setTheme(theme) {
-            document.body.classList.toggle('dark', theme === 'dark');
-            localStorage.setItem('theme', theme);
-            themeToggle.innerHTML = theme === 'dark' 
-                ? '<i class="fas fa-sun text-yellow-300"></i>' 
-                : '<i class="fas fa-moon text-white"></i>';
-        }
-        
-        // Check saved theme or prefered scheme
-        const currentTheme = localStorage.getItem('theme') || 
-                           (prefersDark.matches ? 'dark' : 'light');
-        setTheme(currentTheme);
-        
-        // Toggle theme on button click
-        themeToggle.addEventListener('click', () => {
-            const newTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-        
         // Simple animation on page load
         document.addEventListener('DOMContentLoaded', () => {
             const cards = document.querySelectorAll('.link-card');
