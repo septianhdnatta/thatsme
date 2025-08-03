@@ -33,7 +33,7 @@ Selamat datang di website portofolio **Lexion**! Ini adalah personal site yang d
 
 Kamu bisa meng-clone repo ini dan langsung buka `index.html` di browser:
 
-```bash
+bash
 git clone https://github.com/username/lexion-portfolio.git
 cd lexion-portfolio
 open index.html
