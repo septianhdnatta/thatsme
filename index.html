@@ -1,13 +1,13 @@
-<!--- These changes will:
-1. Move the profile image container outside of the banner section
-2. Position it right below the banner (above the name)
-3. Keep all other styling and functionality intact
-4. Maintain the centered alignment of the profile image
-5. Reduce excessive padding below the banner
-6. Keep the theme toggle functionalityHere is the updated HTML content after applying above edits: ---->
 
 
-
+<!---These changes will:
+1. Reduce banner height from 200px to 180px
+2. Position the profile image container absolutely 140px from the top of the banner
+3. Remove the "My Creative Portfolio" heading completely
+4. Keep the "Explore my work..." text at the bottom of the banner
+5. Set overflow to visible on the banner to prevent image clipping
+6. Add bottom margin to banner for spacing
+7. Move the profile image container inside the banner div but position it to appear slightly below the banner bottomHere is the updated HTML content after applying above edits: --->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -168,12 +168,9 @@
     <div class="banner relative">
         <div class="banner-pattern"></div>
         <div class="banner-content text-white absolute bottom-4 left-0 right-0">
-            <h1 class="text-2xl font-bold">My Creative Portfolio</h1>
             <p class="text-white/80">Explore my work and connect with me</p>
         </div>
-    </div>
-    
-    <div class="profile-img-container">
+        <div class="profile-img-container">
         <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center profile-img mx-auto">
             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b863de17-dd2e-4ef5-831b-c5085d99649a.png" alt="Professional headshot of a creative developer with a modern background" class="w-full h-full rounded-full object-cover" onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d3cdaebf-f9c5-4922-8956-7ea110aa0618.png'"/>
         </div>
