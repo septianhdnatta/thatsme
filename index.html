@@ -288,7 +288,7 @@ body {
 </head>
 <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
 <!-- Loader -->
-<div id="preloader" class="fixed inset-0 flex items-center justify-center bg-white dark:bg-gray-900 z-50">
+<div id="preloader" class="fixed inset-0 flex items-center justify-center bg-white dark:bg-gray-900 z-50 transition-opacity duration-500 opacity-100">
   <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-blue-500"></div>
 </div>
   <!-- Banner -->
@@ -481,11 +481,17 @@ body {
   }
 
     
+  
   window.addEventListener("load", () => {
     setTimeout(() => {
       const loader = document.getElementById("preloader");
-      if (loader) loader.style.display = "none";
-    }, 2000); // Delay 1.2 detik
+      if (loader) {
+        loader.classList.add("opacity-0"); // fade out
+        setTimeout(() => {
+          loader.style.display = "none"; // remove after transition
+        }, 500); // match duration-500
+      }
+    }, 1500); // delay before fade-out
   });
   </script></body>
 </html>
