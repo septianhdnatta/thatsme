@@ -480,9 +480,12 @@ body {
     return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
   }
 
-    window.addEventListener("load", () => {
-    const loader = document.getElementById("preloader");
-    if (loader) loader.style.display = "none";
+    
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      const loader = document.getElementById("preloader");
+      if (loader) loader.style.display = "none";
+    }, 2000); // Delay 1.2 detik
   });
   </script></body>
 </html>
