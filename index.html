@@ -31,13 +31,6 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .banner-content {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-    }
-
     .banner-pattern {
       position: absolute;
       top: 0;
@@ -49,21 +42,16 @@
       opacity: 0.6;
     }
 
-    .profile-img-container {
-      position: absolute;
-      bottom: -60px; /* Lebih rendah */
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 20; /* Lebih tinggi dari konten lain */
-    }
-
-    .profile-img {
-      border: 4px solid white;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    .badge {
+      background-color: #f1f5f9;
+      border-radius: 9999px;
+      padding: 3px 12px;
+      font-size: 12px;
+      font-weight: 600;
     }
 
     .link-card {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s ease;
       border-radius: 12px;
       overflow: hidden;
       position: relative;
@@ -102,34 +90,28 @@
       color: white;
       background-color: var(--primary-color);
     }
-
-    .badge {
-      background-color: #f1f5f9;
-      border-radius: 9999px;
-      padding: 3px 12px;
-      font-size: 12px;
-      font-weight: 600;
-    }
   </style>
 </head>
 <body>
-  <!-- Banner Section -->
+  <!-- Banner -->
   <div class="banner relative">
     <div class="banner-pattern"></div>
-    <div class="banner-content text-white">
+    <div class="absolute bottom-6 left-0 w-full text-center text-white px-4">
       <h1 class="text-2xl font-bold">My Creative Portfolio</h1>
       <p class="text-white/80">Explore my work and connect with me</p>
     </div>
+  </div>
 
-    <div class="flex justify-center profile-img-container">
-      <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center profile-img">
-        <img src="https://files.catbox.moe/8ocizf.jpg" alt="Profile" class="w-full h-full rounded-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/300x300?text=Profile+Photo'" />
-      </div>
+  <!-- Profile Image (outside banner) -->
+  <div class="flex justify-center relative -mt-16 z-20">
+    <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-lg border-4 border-white">
+      <img src="https://placehold.co/300x300" alt="Profile" class="w-full h-full object-cover rounded-full" 
+           onerror="this.onerror=null;this.src='https://placehold.co/300x300?text=Profile+Photo'" />
     </div>
   </div>
 
   <!-- Main Content -->
-  <div class="container mx-auto px-4 pt-24 py-8 max-w-md">
+  <div class="container mx-auto px-4 pt-6 pb-8 max-w-md">
     <!-- Profile Info -->
     <div class="text-center mb-8">
       <h2 class="text-xl font-bold text-gray-800 mb-1">John Doe</h2>
@@ -137,18 +119,17 @@
       <p class="text-gray-700 px-4 text-sm">
         Building beautiful digital experiences and sharing knowledge about web technologies.
       </p>
-
       <div class="flex justify-center mt-3 gap-2">
         <span class="badge">Available for freelance</span>
         <span class="badge">Open for collaboration</span>
       </div>
     </div>
 
-    <!-- Link Cards Section -->
+    <!-- Link Cards -->
     <div class="space-y-4 mb-8">
-      <!-- Feature Link -->
+      <!-- Featured Projects -->
       <a href="#featured" class="block">
-        <div class="link-card bg-white p-5 flex items-center gap-4 relative">
+        <div class="link-card bg-white p-5 flex items-center gap-4">
           <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-indigo-100 to-green-100 flex items-center justify-center text-indigo-500">
             <i class="fas fa-star fa-lg"></i>
           </div>
@@ -162,7 +143,7 @@
         </div>
       </a>
 
-      <!-- Portfolio Link -->
+      <!-- Full Portfolio -->
       <a href="#portfolio" class="block">
         <div class="link-card bg-white p-5 flex items-center gap-4">
           <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center text-blue-500">
@@ -178,7 +159,7 @@
         </div>
       </a>
 
-      <!-- Resume Link -->
+      <!-- Resume -->
       <a href="#resume" class="block">
         <div class="link-card bg-white p-5 flex items-center gap-4">
           <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-green-100 to-teal-100 flex items-center justify-center text-green-500">
@@ -194,7 +175,7 @@
         </div>
       </a>
 
-      <!-- Contact Link -->
+      <!-- Contact -->
       <a href="#contact" class="block">
         <div class="link-card bg-gradient-to-r from-blue-600 to-indigo-600 p-5 flex items-center gap-4">
           <div class="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center text-white">
@@ -237,17 +218,15 @@
     </div>
   </div>
 
+  <!-- Entry Animation -->
   <script>
-    // Simple animation on page load
     document.addEventListener('DOMContentLoaded', () => {
       const cards = document.querySelectorAll('.link-card');
-
       cards.forEach((card, index) => {
         setTimeout(() => {
           card.style.opacity = '1';
           card.style.transform = 'translateY(0)';
         }, index * 100);
-
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
         card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
