@@ -1,96 +1,121 @@
+
+
+Key changes made:
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio Linktree</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Linktree</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #10b981;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            color: #334155;
+        }
+        
+        .banner {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .banner-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+        }
+        
+        .banner-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px);
+            background-size: 15px 15px;
+            opacity: 0.6;
+        }
+        
+        .profile-img-container {
+            position: absolute;
+            bottom: -40px; /* Adjusted to lower the profile image */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        
+        .profile-img {
+            border: 4px solid white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .link-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1);
+            color: white;
+            background-color: var(--primary-color);
+        }
+        
+        .badge {
+            background-color: #f1f5f9;
+            border-radius: 9999px;
+            padding: 3px 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
 
-    :root {
-      --primary-color: #4f46e5;
-      --secondary-color: #10b981;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f8fafc;
-      min-height: 100vh;
-      margin: 0;
-      padding: 0;
-      color: #334155;
-    }
-
-    .banner {
-      height: 200px;
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .banner-pattern {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-      background-size: 15px 15px;
-      opacity: 0.6;
-    }
-
-    .badge {
-      background-color: #f1f5f9;
-      border-radius: 9999px;
-      padding: 3px 12px;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .link-card {
-      transition: all 0.3s ease;
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .link-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-    }
-
-    .link-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 5px;
-      height: 100%;
-      background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-    }
-
-    .social-icon {
-      transition: all 0.3s ease;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background-color: white;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      color: var(--primary-color);
-    }
-
-    .social-icon:hover {
-      transform: scale(1.1);
-      color: white;
-      background-color: var(--primary-color);
-    }
-            /* Music Player Styles */
+        /* Music Player Styles */
         .music-player {
             background-color: white;
             border-radius: 12px;
@@ -107,6 +132,14 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
+            align-items: center; /* Center align items */
+        }
+
+        .music-title {
+            font-weight: 600;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
         }
 
         .progress-container {
@@ -149,173 +182,172 @@
         }
 
         .play-button {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: transparent;
+            color: var(--primary-color);
             border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: auto;
+            height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: background-color 0.3s;
+            padding: 0;
+            margin-right: 10px;
         }
 
         .play-button:hover {
-            background-color: var(--secondary-color);
+            color: var(--secondary-color);
         }
-  </style>
+    </style>
 </head>
 <body>
-  <!-- Banner -->
-  <div class="banner relative">
-    <div class="banner-pattern"></div>
-    <div class="absolute bottom-6 left-0 w-full text-center text-white px-4">
-      <h1 class="text-2xl font-bold">My Creative Portfolio</h1>
-      <p class="text-white/80">Explore my work and connect with me</p>
-    </div>
-  </div>
-
-  <!-- Profile Image (outside banner) -->
-  <div class="flex justify-center relative -mt-16 z-20">
-    <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-      <img src="https://placehold.co/300x300" alt="Profile" class="w-full h-full object-cover rounded-full" 
-           onerror="this.onerror=null;this.src='https://placehold.co/300x300?text=Profile+Photo'" />
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <div class="container mx-auto px-4 pt-6 pb-8 max-w-md">
-    <!-- Profile Info -->
-    <div class="text-center mb-8">
-      <h2 class="text-xl font-bold text-gray-800 mb-1">John Doe</h2>
-      <p class="text-gray-600 mb-4">Digital Creator & Web Developer</p>
-      <p class="text-gray-700 px-4 text-sm">
-        Building beautiful digital experiences and sharing knowledge about web technologies.
-      </p>
-      <div class="flex justify-center mt-3 gap-2">
-        <span class="badge">Available for freelance</span>
-        <span class="badge">Open for collaboration</span>
-      </div>
+    <!-- Banner Section -->
+    <div class="banner relative">
+        <div class="banner-pattern"></div>
+        <div class="banner-content text-white">
+            <h1 class="text-2xl font-bold">My Creative Portfolio</h1>
+            <p class="text-white/80">Explore my work and connect with me</p>
+        </div>
+        
+        <div class="flex justify-center profile-img-container">
+            <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center profile-img">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5492cb4c-fd88-4303-bd10-21b059069134.png" alt="Professional headshot of a creative developer with a modern background" class="w-full h-full rounded-full object-cover" onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ced04a75-8fb1-44aa-ab2d-977e47a305b3.png'"/>
+            </div>
+        </div>
     </div>
 
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 max-w-md">
+        <!-- Profile Info -->
+        <div class="text-center mb-8">
+            <h2 class="text-xl font-bold text-gray-800 mb-1">John Doe</h2>
+            <p class="text-gray-600 mb-4">Digital Creator & Web Developer</p>
+            <p class="text-gray-700 px-4 text-sm">Building beautiful digital experiences and sharing knowledge about web technologies.</p>
+            
+            <div class="flex justify-center mt-3 gap-2">
+                <span class="badge">Available for freelance</span>
+                <span class="badge">Open for collaboration</span>
+            </div>
+        </div>
 
-            <!-- Music Player Section -->
+        <!-- Music Player Section -->
         <div class="music-player mb-8">
             <div class="cover-image">
                 <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/17d16e81-f1b6-4992-9610-4071946599c7.png" alt="Cover Image">
             </div>
             <div class="player-controls">
                 <audio id="audio-player" src="https://files.catbox.moe/he3dgx.mp3"></audio>
-                <button class="play-button" onclick="togglePlay()">
-                    <i class="fas fa-play"></i>
-                </button>
-                <div class="progress-container" onclick="seek(event)">
-                    <div class="progress-bar" id="progress-bar"></div>
-                </div>
-                <div class="time-display">
+                <div class="music-title">My Favorite Song</div>
+                <div class="flex items-center w-full" style="margin-top: 8px;">
+                    <button class="play-button" onclick="togglePlay()">
+                        <i class="fas fa-play" style="font-size: 20px;"></i>
+                    </button>
+                    <div class="flex-1">
+                        <div class="progress-container" onclick="seek(event)">
+                            <div class="progress-bar" id="progress-bar"></div>
+                        </div>
+                        <div class="time-display">
                     <span id="current-time">0:00</span>
-                    <span id="duration">0:00</span>
-                </div>
+                    <span id="duration" class="ml-auto">0:00</span>
+                        </div>
+                    </div>
             </div>
         </div>
 
-    <!-- Link Cards -->
-    <div class="space-y-4 mb-8">
-      <!-- Featured Projects -->
-      <a href="#featured" class="block">
-        <div class="link-card bg-white p-5 flex items-center gap-4">
-          <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-indigo-100 to-green-100 flex items-center justify-center text-indigo-500">
-            <i class="fas fa-star fa-lg"></i>
-          </div>
-          <div>
-            <h3 class="font-semibold text-gray-800">Featured Projects</h3>
-            <p class="text-sm text-gray-500">See my best work</p>
-          </div>
-          <div class="ml-auto text-gray-400">
-            <i class="fas fa-chevron-right"></i>
-          </div>
+        <!-- Link Cards Section -->
+        <div class="space-y-4 mb-8">
+            <!-- Feature Link -->
+            <a href="#featured" class="block">
+                <div class="link-card bg-white p-5 flex items-center gap-4 relative">
+                    <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-indigo-100 to-green-100 flex items-center justify-center text-indigo-500">
+                        <i class="fas fa-star fa-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Featured Projects</h3>
+                        <p class="text-sm text-gray-500">See my best work</p>
+                    </div>
+                    <div class="ml-auto text-gray-400">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Portfolio Link -->
+            <a href="#portfolio" class="block">
+                <div class="link-card bg-white p-5 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center text-blue-500">
+                        <i class="fas fa-briefcase fa-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Full Portfolio</h3>
+                        <p class="text-sm text-gray-500">Browse all my projects</p>
+                    </div>
+                    <div class="ml-auto text-gray-400">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Resume Link -->
+            <a href="#resume" class="block">
+                <div class="link-card bg-white p-5 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-green-100 to-teal-100 flex items-center justify-center text-green-500">
+                        <i class="fas fa-file-alt fa-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">My Resume</h3>
+                        <p class="text-sm text-gray-500">Download my CV</p>
+                    </div>
+                    <div class="ml-auto text-gray-400">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Contact Link -->
+            <a href="#contact" class="block">
+                <div class="link-card bg-gradient-to-r from-blue-600 to-indigo-600 p-5 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center text-white">
+                        <i class="fas fa-envelope fa-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-white">Contact Me</h3>
+                        <p class="text-sm text-white/80">Get in touch</p>
+                    </div>
+                    <div class="ml-auto text-white">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </a>
         </div>
-      </a>
 
-      <!-- Full Portfolio -->
-      <a href="#portfolio" class="block">
-        <div class="link-card bg-white p-5 flex items-center gap-4">
-          <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center text-blue-500">
-            <i class="fas fa-briefcase fa-lg"></i>
-          </div>
-          <div>
-            <h3 class="font-semibold text-gray-800">Full Portfolio</h3>
-            <p class="text-sm text-gray-500">Browse all my projects</p>
-          </div>
-          <div class="ml-auto text-gray-400">
-            <i class="fas fa-chevron-right"></i>
-          </div>
+        <!-- Social Links -->
+        <div class="flex justify-center space-x-4 mb-8">
+            <a href="#twitter" class="social-icon hover:bg-blue-400">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#github" class="social-icon hover:bg-gray-800">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="#linkedin" class="social-icon hover:bg-blue-600">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#instagram" class="social-icon hover:bg-gradient-to-r from-purple-500 to-pink-500">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#dribbble" class="social-icon hover:bg-pink-500">
+                <i class="fab fa-dribbble"></i>
+            </a>
         </div>
-      </a>
 
-      <!-- Resume -->
-      <a href="#resume" class="block">
-        <div class="link-card bg-white p-5 flex items-center gap-4">
-          <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-green-100 to-teal-100 flex items-center justify-center text-green-500">
-            <i class="fas fa-file-alt fa-lg"></i>
-          </div>
-          <div>
-            <h3 class="font-semibold text-gray-800">My Resume</h3>
-            <p class="text-sm text-gray-500">Download my CV</p>
-          </div>
-          <div class="ml-auto text-gray-400">
-            <i class="fas fa-chevron-right"></i>
-          </div>
+        <!-- Footer -->
+        <div class="text-center text-gray-500 text-xs">
+            <p>© 2023 My Portfolio. All rights reserved.</p>
+            <p class="mt-1">Made with ❤️ by John Doe</p>
         </div>
-      </a>
-
-      <!-- Contact -->
-      <a href="#contact" class="block">
-        <div class="link-card bg-gradient-to-r from-blue-600 to-indigo-600 p-5 flex items-center gap-4">
-          <div class="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center text-white">
-            <i class="fas fa-envelope fa-lg"></i>
-          </div>
-          <div>
-            <h3 class="font-semibold text-white">Contact Me</h3>
-            <p class="text-sm text-white/80">Get in touch</p>
-          </div>
-          <div class="ml-auto text-white">
-            <i class="fas fa-chevron-right"></i>
-          </div>
-        </div>
-      </a>
     </div>
 
-    <!-- Social Links -->
-    <div class="flex justify-center space-x-4 mb-8">
-      <a href="#twitter" class="social-icon hover:bg-blue-400">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="#github" class="social-icon hover:bg-gray-800">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="#linkedin" class="social-icon hover:bg-blue-600">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="#instagram" class="social-icon hover:bg-gradient-to-r from-purple-500 to-pink-500">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="#dribbble" class="social-icon hover:bg-pink-500">
-        <i class="fab fa-dribbble"></i>
-      </a>
-    </div>
-
-    <!-- Footer -->
-    <div class="text-center text-gray-500 text-xs">
-      <p>© 2023 My Portfolio. All rights reserved.</p>
-      <p class="mt-1">Made with ❤️ by John Doe</p>
-    </div>
-  </div>
-
-  <!-- Entry Animation -->
-      <script>
+    <script>
         // Simple animation on page load
         document.addEventListener('DOMContentLoaded', () => {
             const cards = document.querySelectorAll('.link-card');
