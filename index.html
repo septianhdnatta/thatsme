@@ -170,6 +170,48 @@
     .play-button:hover {
       color: var(--secondary-color);
     }
+    .shiny-badge {
+  position: relative;
+  overflow: hidden;
+  background-color: #f1f5f9;
+  color: #334155;
+  border-radius: 9999px;
+  padding: 3px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 0;
+}
+
+.shiny-badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shine 2.5s infinite;
+  z-index: 1;
+}
+
+.shiny-badge > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 100%;
+  }
+}
   </style>
 </head>
 <body>
@@ -198,9 +240,9 @@
         Building beautiful digital experiences and sharing knowledge about web technologies.
       </p>
       <div class="flex justify-center mt-3 gap-2">
-  <span class="badge flex items-center gap-1">
-    <i class="fas fa-music text-indigo-500"></i> Music
-  </span>
+  <span class="badge shiny-badge">
+  <i class="fas fa-music text-indigo-500"></i> Music Lover
+</span>
   <span class="badge flex items-center gap-1">
     <i class="fas fa-code text-green-500"></i> Dev
   </span>
