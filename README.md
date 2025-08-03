@@ -59,6 +59,7 @@
 ```bash
 git clone https://github.com/username/lexion-portfolio.git
 cd lexion-portfolio
+```
 
 2. Jalankan di browser
 
@@ -69,7 +70,7 @@ Buka file index.html secara langsung melalui browser favorit kamu. Tidak membutu
 
 
 --- 
-```
+
 🔐 Lisensi
 
 Kode sumber ini dirilis di bawah lisensi MIT.
