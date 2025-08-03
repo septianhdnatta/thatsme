@@ -136,7 +136,8 @@
             font-weight: 600;
             font-size: 16px;
             color: #333;
-            margin-bottom: 5px;
+            text-align: center;
+            margin: 5px 0;
         }
 
         .progress-container {
@@ -235,19 +236,20 @@
             <div class="player-controls">
                 <audio id="audio-player" src="https://files.catbox.moe/he3dgx.mp3"></audio>
                 <div class="music-title">My Favorite Song</div>
-                <div class="flex items-center w-full" style="margin-top: 8px;">
+                <div class="flex items-center w-full mt-2">
                     <button class="play-button" onclick="togglePlay()">
-                        <i class="fas fa-play" style="font-size: 20px;"></i>
+                        <i class="fas fa-play text-lg"></i>
                     </button>
-                    <div class="flex-1">
+                    <div class="flex-1 px-3">
                         <div class="progress-container" onclick="seek(event)">
                             <div class="progress-bar" id="progress-bar"></div>
                         </div>
-                        <div class="time-display">
+                        <div class="flex justify-between text-xs text-gray-500 mt-1">
                     <span id="current-time">0:00</span>
-                    <span id="duration" class="ml-auto">0:00</span>
+                            <span id="duration">0:00</span>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
 
