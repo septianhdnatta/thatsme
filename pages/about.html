@@ -1,198 +1,131 @@
 <!DOCTYPE html>
-<html lang="en" class="transition-colors duration-300">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me - Lexion</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { darkMode: 'class' };
-  </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Septian (Lee Xiao Jun)</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4d0b2b49aa.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f8fafc;
-      color: #334155;
     }
-    .dark body {
-      background-color: #0f172a;
-      color: #e2e8f0;
-    }
-    .badge {
-      border-radius: 9999px;
-      padding: 3px 12px;
-      font-size: 12px;
-      font-weight: 600;
-      background-color: #f1f5f9;
-      color: #334155;
-    }
-    .dark .badge {
-      background-color: #1e293b;
-      color: #e2e8f0;
-    }
+
     .crown {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  font-size: 1.5rem;
-  color: gold;
-  z-index: 50;
-  animation: blink 1.2s infinite;
-}
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      font-size: 1.5rem;
+      color: gold;
+      transform: rotate(15deg);
+      animation: blink 1.5s infinite;
+      z-index: 20;
     }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; filter: drop-shadow(0 0 4px gold); }
+      50% { opacity: 0.5; filter: drop-shadow(0 0 8px yellow); }
+    }
+
+    .profile-container {
+      transition: transform 0.6s ease;
+      cursor: pointer;
+      perspective: 1000px;
+    }
+
+    .profile-container.rotated {
+      transform: rotateY(180deg);
+    }
+
     .theme-toggle {
       position: absolute;
-      top: 16px;
-      left: 16px;
-      background-color: #e2e8f0;
-      color: #0f172a;
-      padding: 6px 10px;
-      border-radius: 9999px;
-      font-size: 14px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s;
+      top: 1rem;
+      left: 1rem;
+      z-index: 30;
     }
-    .dark .theme-toggle {
-      background-color: #1e293b;
-      color: #f8fafc;
+
+    .dark .bg-main {
+      background-color: #0f172a;
     }
   </style>
 </head>
-<body class="transition-colors duration-300 relative">
+<body class="bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-white relative min-h-screen">
 
-  <!-- Toggle Theme Button -->
+  <!-- Light/Dark toggle -->
   <button class="theme-toggle" onclick="toggleTheme()">
-    <i class="fas fa-circle-half-stroke"></i>
+    <i class="fas fa-moon dark:hidden"></i>
+    <i class="fas fa-sun hidden dark:inline"></i>
   </button>
 
+  <!-- Banner -->
+  <div class="w-full h-40 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-b-3xl relative"></div>
+
   <!-- Profile Section -->
-  <div class="container mx-auto max-w-md px-4 py-8">
-
-    <!-- Banner -->
-    <div class="relative mb-16">
-      <div class="h-40 w-full rounded-b-3xl bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500"></div>
-      <!-- Profile image -->
-      <div class="absolute -bottom-16 left-1/2 transform -translate-x-1/2 text-center">
-        <div id="profile-container" class="w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg relative transition-transform duration-700 cursor-pointer">
-          <img id="profile-image" src="https://files.catbox.moe/xdy8jt.jpg" alt="Profile" class="w-full h-full object-cover" />
-          <i id="crown-icon" class="fas fa-crown crown"></i>
-        </div>
-      </div>
+  <div class="text-center relative -mt-16">
+    <div id="profilePic" class="w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg mx-auto relative profile-container">
+      <img id="profileImage" src="https://files.catbox.moe/xdy8jt.jpg" alt="Profile"
+           class="w-full h-full object-cover transition-transform duration-500"
+           onerror="this.onerror=null;this.src='https://placehold.co/300x300?text=Photo';" />
+      <i id="crownIcon" class="fas fa-crown crown"></i>
     </div>
 
-    <!-- Info -->
-    <div class="mt-20 text-center">
-      <h1 class="text-xl font-bold mt-2 text-gray-800 dark:text-white">Septian (Lee Xiao Jun)</h1>
-      <p class="text-gray-600 dark:text-gray-400">Just a passionate builder.</p>
-      <div class="flex justify-center flex-wrap gap-2 mt-4">
-        <span class="badge"><i class="fas fa-graduation-cap"></i> SMK Negeri 1 Cikarang Selatan</span>
-        <span class="badge"><i class="fas fa-briefcase"></i> Frontend Developer</span>
-        <span class="badge"><i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia</span>
-      </div>
-      <div class="mt-6 text-sm text-gray-700 dark:text-gray-300 px-2">
-        Hi! I'm a web developer who loves crafting intuitive interfaces and sharing open-source projects with the community. Currently building beautiful things with HTML, Tailwind, and JavaScript.
-      </div>
+    <h1 class="text-2xl font-semibold mt-4">Septian (Lee Xiao Jun)</h1>
+    <p class="text-gray-500 dark:text-gray-400 mb-4">Just a passionate builder.</p>
+
+    <div class="flex flex-wrap justify-center gap-2 text-sm">
+      <span class="bg-white dark:bg-zinc-800 px-3 py-1 rounded-full flex items-center gap-1 shadow">
+        <i class="fas fa-graduation-cap"></i> SMK Negeri 1 Cikarang Selatan
+      </span>
+      <span class="bg-white dark:bg-zinc-800 px-3 py-1 rounded-full flex items-center gap-1 shadow">
+        <i class="fas fa-code"></i> Frontend Developer
+      </span>
+      <span class="bg-white dark:bg-zinc-800 px-3 py-1 rounded-full flex items-center gap-1 shadow">
+        <i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia
+      </span>
     </div>
 
-    <!-- About Me Section -->
-    <div class="mt-12 px-4">
-      <h2 class="text-2xl font-bold text-center mb-6">ALL ABOUT ME</h2>
-      <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-        <!-- Video -->
-        <div class="w-40 h-40 md:w-52 md:h-52">
-          <img src="https://files.catbox.moe/z2p91v.gif" alt="Autoplay Video" class="w-full h-full object-contain" />
-        </div>
-        <!-- Deskripsi -->
-        <div class="text-center md:text-left">
-          <p class="text-gray-700 dark:text-gray-300 text-base mb-3 leading-relaxed">
-            Lee Xiao Jun adalah seseorang yang memiliki rasa semangat tinggi dalam dunia pemrograman.
-          </p>
-          <div class="flex justify-center md:justify-start flex-wrap gap-2">
-            <span class="badge">🎧 Music Lover</span>
-            <span class="badge">💻 Dev</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project Section -->
-    <section class="max-w-4xl mx-auto px-4 py-12">
-      <h2 class="text-2xl font-bold mb-8 text-center">My Projects</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-
-        <!-- Project Card -->
-        <div onclick="highlight(this)" class="project-card cursor-pointer relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow hover:shadow-lg transition duration-300">
-          <img src="https://placehold.co/300x180" alt="Project" class="rounded mb-3">
-          <h3 class="font-semibold text-lg mb-1">Project One</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Deskripsi singkat project.</p>
-          <a href="#" target="_blank" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-
-        <div onclick="highlight(this)" class="project-card cursor-pointer relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow hover:shadow-lg transition duration-300">
-          <img src="https://placehold.co/300x180" alt="Project" class="rounded mb-3">
-          <h3 class="font-semibold text-lg mb-1">Project Two</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Deskripsi singkat project.</p>
-          <a href="#" target="_blank" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-
-        <div onclick="highlight(this)" class="project-card cursor-pointer relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow hover:shadow-lg transition duration-300">
-          <img src="https://placehold.co/300x180" alt="Project" class="rounded mb-3">
-          <h3 class="font-semibold text-lg mb-1">Project Three</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Deskripsi singkat project.</p>
-          <a href="#" target="_blank" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
+    <p class="max-w-xl mx-auto mt-6 px-4 text-base text-gray-600 dark:text-gray-300">
+      Hi! I'm a web developer who loves crafting intuitive interfaces and sharing open-source projects with the community. Currently building beautiful things with HTML, Tailwind, and JavaScript.
+    </p>
   </div>
 
-  <!-- Scripts -->
+  <!-- About Me Video Section -->
+  <div class="text-center mt-12 px-4">
+    <h2 class="text-2xl font-semibold mb-4">ALL ABOUT ME</h2>
+    <video autoplay muted loop playsinline class="w-56 h-auto mx-auto rounded-xl shadow-xl">
+      <source src="https://files.catbox.moe/z2p91v.gif" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
   <script>
-    const images = [
-      "https://files.catbox.moe/xdy8jt.jpg",
-      "https://files.catbox.moe/lu7u04.png"
-    ];
-    const crowns = [
-      "fas fa-crown",
-      "fas fa-star"
-    ];
-
-    let flipped = false;
-    let current = 0;
-    const profileImage = document.getElementById('profile-image');
-    const profileContainer = document.getElementById('profile-container');
-    const crownIcon = document.getElementById('crown-icon');
-
-    profileContainer.addEventListener('click', () => {
-      flipped = !flipped;
-      current = flipped ? 1 : 0;
-      profileContainer.style.transform = flipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
-      profileImage.src = images[current];
-      crownIcon.className = crowns[current] + ' crown';
-    });
-
+    // Dark Mode Toggle
     function toggleTheme() {
       document.documentElement.classList.toggle('dark');
     }
 
-    function highlight(el) {
-      document.querySelectorAll('.project-card').forEach(card => {
-        card.classList.remove('ring-4', 'ring-blue-400', 'dark:ring-blue-600');
-      });
-      el.classList.add('ring-4', 'ring-blue-400', 'dark:ring-blue-600');
-    }
+    // Flip Image on Click + Swap Icon
+    const profilePic = document.getElementById('profilePic');
+    const profileImage = document.getElementById('profileImage');
+    const crownIcon = document.getElementById('crownIcon');
+
+    let isFlipped = false;
+    let usingAltIcon = false;
+
+    profilePic.addEventListener('click', () => {
+      isFlipped = !isFlipped;
+      profilePic.classList.toggle('rotated');
+
+      profileImage.src = isFlipped
+        ? 'https://placehold.co/300x300?text=Alt+Photo'
+        : 'https://files.catbox.moe/xdy8jt.jpg';
+
+      crownIcon.className = usingAltIcon
+        ? 'fas fa-crown crown'
+        : 'fas fa-star crown';
+
+      usingAltIcon = !usingAltIcon;
+    });
   </script>
 </body>
 </html>
