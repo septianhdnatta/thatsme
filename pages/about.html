@@ -108,6 +108,40 @@
       </div>
     </div>
 
+<section class="max-w-4xl mx-auto px-4 py-12">
+  <h2 class="text-2xl font-bold mb-8 text-center">My Projects</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    
+    <!-- Project Card -->
+    <div
+      onclick="highlight(this)"
+      class="project-card cursor-pointer relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow hover:shadow-lg transition duration-300"
+    >
+      <h3 class="font-semibold text-lg mb-2">Project One</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400">Deskripsi singkat project.</p>
+    </div>
+
+    <div
+      onclick="highlight(this)"
+      class="project-card cursor-pointer relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow hover:shadow-lg transition duration-300"
+    >
+      <h3 class="font-semibold text-lg mb-2">Project Two</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400">Deskripsi singkat project.</p>
+    </div>
+
+    <div
+      onclick="highlight(this)"
+      class="project-card cursor-pointer relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow hover:shadow-lg transition duration-300"
+    >
+      <h3 class="font-semibold text-lg mb-2">Project Three</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400">Deskripsi singkat project.</p>
+    </div>
+
+  </div>
+</section>
+
+    
+
   </div>
 </div>
   </div>  <script>
@@ -138,5 +172,17 @@
     function toggleTheme() {
       document.documentElement.classList.toggle('dark');
     }
+
+
+    
+function highlight(el) {
+  // Hapus highlight dari semua
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.classList.remove('ring-4', 'ring-blue-400', 'dark:ring-blue-600');
+  });
+  // Tambahkan highlight ke yang diklik
+  el.classList.add('ring-4', 'ring-blue-400', 'dark:ring-blue-600');
+}
+   
   </script></body>
 </html>
