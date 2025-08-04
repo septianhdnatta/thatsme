@@ -32,23 +32,22 @@
       color: #e2e8f0;
     }
     .crown {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      font-size: 1.5rem;
-      color: gold;
-      transform: rotate(15deg);
-      animation: blink 1.5s infinite;
-      z-index: 10;
-    }
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 1.5rem;
+  color: gold;
+  z-index: 50;
+  animation: blink 1.2s infinite;
+}
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.3; }
     }
     .theme-toggle {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 16px;
+      left: 16px;
       background-color: #e2e8f0;
       color: #0f172a;
       padding: 6px 10px;
@@ -76,8 +75,7 @@
 
     <!-- Banner -->
     <div class="relative mb-16">
-      <div class="h-28 rounded-xl bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500"></div>
-      
+      <div class="h-40 w-full rounded-b-3xl bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500"></div>
       <!-- Profile image -->
       <div class="absolute -bottom-16 left-1/2 transform -translate-x-1/2 text-center">
         <div id="profile-container" class="w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg relative transition-transform duration-700 cursor-pointer">
