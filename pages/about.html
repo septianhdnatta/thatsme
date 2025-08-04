@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en" class="transition-colors duration-300">
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-300">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,16 +8,10 @@
   <script>
     tailwind.config = { darkMode: 'class' }
   </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f8fafc;
-      color: #334155;
-    }
-    .dark body {
-      background-color: #0f172a;
-      color: #e2e8f0;
     }
     .badge {
       border-radius: 9999px;
@@ -63,41 +58,46 @@
     }
   </style>
 </head>
-<body class="transition-colors duration-300 relative">  <!-- Toggle Theme Button -->  <button class="theme-toggle" onclick="toggleTheme()">
-    <i class="fas fa-circle-half-stroke"></i>
-  </button>  <div class="container mx-auto max-w-md px-4 py-8">
-    <div class="text-center relative">
-      <div id="profile-container" class="w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg mx-auto relative transition-transform duration-700 cursor-pointer">
-        <img id="profile-image" src="https://files.catbox.moe/xdy8jt.jpg" 
-             alt="Profile" 
-             class="w-full h-full object-cover" 
-             onerror="this.onerror=null;this.src='https://files.catbox.moe/lu7u04.png'">
-        <i class="fas fa-crown crown"></i>
-      </div>
-      <h1 class="text-xl font-bold mt-4 text-gray-800 dark:text-white">Septian (Lee Xiao Jun)</h1>
-      <p class="text-gray-600 dark:text-gray-400">Just a passionate builder.</p>
-      <div class="flex justify-center flex-wrap gap-2 mt-4">
-        <span class="badge"><i class="fas fa-graduation-cap"></i> SMK Negeri 1 Cikarang Selatan</span>
-        <span class="badge"><i class="fas fa-briefcase"></i> Frontend Developer</span>
-        <span class="badge"><i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia</span>
-      </div>
-      <div class="mt-6 text-sm text-gray-700 dark:text-gray-300 px-2">
-        Hi! I'm a web developer who loves crafting intuitive interfaces and sharing open-source projects with the community. Currently building beautiful things with HTML, Tailwind, and JavaScript.
-      </div>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 transition-colors duration-300 relative">
+
+<!-- Toggle Theme Button -->
+<button class="theme-toggle" onclick="toggleTheme()">
+  <i class="fas fa-circle-half-stroke"></i>
+</button>
+
+<!-- Profile Section -->
+<div class="container mx-auto max-w-md px-4 py-8">
+  <div class="text-center relative">
+    <div id="profile-container" class="w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg mx-auto relative transition-transform duration-700 cursor-pointer">
+      <img id="profile-image" src="https://files.catbox.moe/xdy8jt.jpg" 
+           alt="Profile" class="w-full h-full object-cover"
+           onerror="this.onerror=null;this.src='https://files.catbox.moe/lu7u04.png'">
+      <i class="fas fa-crown crown"></i>
     </div>
-    
-<!-- ABOUT ME SECTION -->
-<div class="mt-12 px-4">
+    <h1 class="text-xl font-bold mt-4">Septian (Lee Xiao Jun)</h1>
+    <p class="text-gray-600 dark:text-gray-400">Just a passionate builder.</p>
+    <div class="flex justify-center flex-wrap gap-2 mt-4">
+      <span class="badge"><i class="fas fa-graduation-cap"></i> SMK Negeri 1 Cikarang Selatan</span>
+      <span class="badge"><i class="fas fa-briefcase"></i> Frontend Developer</span>
+      <span class="badge"><i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia</span>
+    </div>
+    <div class="mt-6 text-sm text-gray-700 dark:text-gray-300 px-2">
+      Hi! I'm a web developer who loves crafting intuitive interfaces and sharing open-source projects with the community. Currently building beautiful things with HTML, Tailwind, and JavaScript.
+    </div>
+  </div>
+</div>
+
+<!-- About Me -->
+<section class="px-4 py-8">
   <h2 class="text-2xl font-bold text-center mb-6" style="font-family: 'Poppins', sans-serif;">ALL ABOUT ME</h2>
-  
-  <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+  <div class="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl mx-auto">
     
-    <!-- Video -->
+    <!-- GIF Video -->
     <div class="w-40 h-40 md:w-52 md:h-52">
       <img src="https://files.catbox.moe/z2p91v.gif" alt="Autoplay Video" class="w-full h-full object-contain">
     </div>
 
-    <!-- Deskripsi -->
+    <!-- Deskripsi + Badge -->
     <div class="text-center md:text-left">
       <p class="text-gray-700 dark:text-gray-300 text-base mb-3 leading-relaxed">
         Lee Xiao Jun adalah seseorang yang memiliki rasa semangat tinggi dalam dunia pemrograman
@@ -107,82 +107,78 @@
         <span class="badge">💻 Dev</span>
       </div>
     </div>
+  </div>
+</section>
 
-<section class="max-w-4xl mx-auto px-4 py-12">
+<!-- Project Section -->
+<section class="max-w-6xl mx-auto px-4 py-12">
   <h2 class="text-2xl font-bold mb-8 text-center">My Projects</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    
+
     <!-- Project Card -->
-    <div
-      onclick="highlight(this)"
-      class="project-card cursor-pointer relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow hover:shadow-lg transition duration-300"
-    >
-      <h3 class="font-semibold text-lg mb-2">Project One</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-400">Deskripsi singkat project.</p>
+    <div onclick="highlight(this)" class="project-card cursor-pointer bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow hover:shadow-xl transition duration-300">
+      <img src="https://via.placeholder.com/300x180.png?text=Project+1" class="w-full rounded-md mb-4 object-cover" alt="Project Image">
+      <h3 class="font-semibold text-lg mb-1">Project One</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Deskripsi singkat project ini menjelaskan fungsinya.</p>
+      <a href="https://github.com/username/project1" target="_blank" class="text-gray-500 dark:text-gray-300 hover:text-blue-500">
+        <i class="fab fa-github fa-lg"></i> <span class="sr-only">Source Code</span>
+      </a>
     </div>
 
-    <div
-      onclick="highlight(this)"
-      class="project-card cursor-pointer relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow hover:shadow-lg transition duration-300"
-    >
-      <h3 class="font-semibold text-lg mb-2">Project Two</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-400">Deskripsi singkat project.</p>
+    <div onclick="highlight(this)" class="project-card cursor-pointer bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow hover:shadow-xl transition duration-300">
+      <img src="https://via.placeholder.com/300x180.png?text=Project+2" class="w-full rounded-md mb-4 object-cover" alt="Project Image">
+      <h3 class="font-semibold text-lg mb-1">Project Two</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Proyek kedua dengan fitur keren dan UI modern.</p>
+      <a href="https://github.com/username/project2" target="_blank" class="text-gray-500 dark:text-gray-300 hover:text-blue-500">
+        <i class="fab fa-github fa-lg"></i> <span class="sr-only">Source Code</span>
+      </a>
     </div>
 
-    <div
-      onclick="highlight(this)"
-      class="project-card cursor-pointer relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow hover:shadow-lg transition duration-300"
-    >
-      <h3 class="font-semibold text-lg mb-2">Project Three</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-400">Deskripsi singkat project.</p>
+    <div onclick="highlight(this)" class="project-card cursor-pointer bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow hover:shadow-xl transition duration-300">
+      <img src="https://via.placeholder.com/300x180.png?text=Project+3" class="w-full rounded-md mb-4 object-cover" alt="Project Image">
+      <h3 class="font-semibold text-lg mb-1">Project Three</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Sebuah aplikasi yang membantu produktivitas harian.</p>
+      <a href="https://github.com/username/project3" target="_blank" class="text-gray-500 dark:text-gray-300 hover:text-blue-500">
+        <i class="fab fa-github fa-lg"></i> <span class="sr-only">Source Code</span>
+      </a>
     </div>
 
   </div>
 </section>
 
-    
+<!-- Scripts -->
+<script>
+  const images = [
+    "https://files.catbox.moe/xdy8jt.jpg",
+    "https://files.catbox.moe/lu7u04.png"
+  ];
 
-  </div>
-</div>
-  </div>  <script>
-    const images = [
-      "https://files.catbox.moe/xdy8jt.jpg",
-      "https://files.catbox.moe/lu7u04.png"
-    ];
+  let current = 0;
+  let flipped = false;
+  const profileContainer = document.getElementById('profile-container');
+  const profileImage = document.getElementById('profile-image');
 
-    let current = 0;
-    let flipped = false;
-    const profileContainer = document.getElementById('profile-container');
-    const profileImage = document.getElementById('profile-image');
-
-    // Manual flip on click
-    profileContainer.addEventListener('click', () => {
-      flipped = !flipped;
-      profileContainer.style.transform = flipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
-      profileImage.src = flipped ? images[1] : images[0];
-    });
-
-    // Auto cycle every 5 seconds
-    setInterval(() => {
-      current = (current + 1) % images.length;
-      profileImage.src = images[current];
-    }, 5000);
-
-    // Dark mode toggle
-    function toggleTheme() {
-      document.documentElement.classList.toggle('dark');
-    }
-
-
-    
-function highlight(el) {
-  // Hapus highlight dari semua
-  document.querySelectorAll('.project-card').forEach(card => {
-    card.classList.remove('ring-4', 'ring-blue-400', 'dark:ring-blue-600');
+  profileContainer.addEventListener('click', () => {
+    flipped = !flipped;
+    profileContainer.style.transform = flipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+    profileImage.src = flipped ? images[1] : images[0];
   });
-  // Tambahkan highlight ke yang diklik
-  el.classList.add('ring-4', 'ring-blue-400', 'dark:ring-blue-600');
-}
-   
-  </script></body>
+
+  setInterval(() => {
+    current = (current + 1) % images.length;
+    profileImage.src = images[current];
+  }, 5000);
+
+  function toggleTheme() {
+    document.documentElement.classList.toggle('dark');
+  }
+
+  function highlight(el) {
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.classList.remove('ring-4', 'ring-blue-400', 'dark:ring-blue-600');
+    });
+    el.classList.add('ring-4', 'ring-blue-400', 'dark:ring-blue-600');
+  }
+</script>
+</body>
 </html>
