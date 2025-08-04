@@ -1,13 +1,12 @@
-<!DOCTYPE html><html lang="en" class="transition-colors duration-300">
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-300">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me - Lexion</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      darkMode: 'class'
-    }
+    tailwind.config = { darkMode: 'class' }
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
@@ -40,49 +39,89 @@
       color: gold;
       transform: rotate(15deg);
       animation: blink 1.5s infinite;
+      z-index: 10;
     }
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.3; }
     }
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #e2e8f0;
+      color: #0f172a;
+      padding: 6px 10px;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .dark .theme-toggle {
+      background-color: #1e293b;
+      color: #f8fafc;
+    }
   </style>
 </head>
-<body class="transition-colors duration-300">
+<body class="transition-colors duration-300 relative">
+
+  <!-- Toggle Theme Button -->
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <i class="fas fa-circle-half-stroke"></i>
+  </button>
+
   <div class="container mx-auto max-w-md px-4 py-8">
     <div class="text-center relative">
-  <div id="profile-container" class="w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg mx-auto relative transition-transform duration-700 cursor-pointer">
-    <img id="profile-image" src="https://files.catbox.moe/xdy8jt.jpg" 
-         alt="Profile" 
-         class="w-full h-full object-cover" 
-         onerror="this.onerror=null;this.src='https://files.catbox.moe/lu7u04.png'">
-    <i class="fas fa-crown crown"></i>
-  </div>
+      <div id="profile-container" class="w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg mx-auto relative transition-transform duration-700 cursor-pointer">
+        <img id="profile-image" src="https://files.catbox.moe/xdy8jt.jpg" 
+             alt="Profile" 
+             class="w-full h-full object-cover" 
+             onerror="this.onerror=null;this.src='https://files.catbox.moe/lu7u04.png'">
+        <i class="fas fa-crown crown"></i>
+      </div>
       <h1 class="text-xl font-bold mt-4 text-gray-800 dark:text-white">Septian (Lee Xiao Jun)</h1>
-      <p class="text-gray-600 dark:text-gray-400">Just a passionate builder.</p><div class="flex justify-center flex-wrap gap-2 mt-4">
-    <span class="badge"><i class="fas fa-graduation-cap"></i> SMK Negeri 1 Cikarang Selatan</span>
-    <span class="badge"><i class="fas fa-briefcase"></i> Frontend Developer</span>
-    <span class="badge"><i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia</span>
-  </div>
-
-  <div class="mt-6 text-sm text-gray-700 dark:text-gray-300 px-2">
-    Hi! I'm a web developer who loves crafting intuitive interfaces and sharing open-source projects with the community. Currently building beautiful things with HTML, Tailwind, and JavaScript.
-  </div>
-</div>
-
+      <p class="text-gray-600 dark:text-gray-400">Just a passionate builder.</p>
+      <div class="flex justify-center flex-wrap gap-2 mt-4">
+        <span class="badge"><i class="fas fa-graduation-cap"></i> SMK Negeri 1 Cikarang Selatan</span>
+        <span class="badge"><i class="fas fa-briefcase"></i> Frontend Developer</span>
+        <span class="badge"><i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia</span>
+      </div>
+      <div class="mt-6 text-sm text-gray-700 dark:text-gray-300 px-2">
+        Hi! I'm a web developer who loves crafting intuitive interfaces and sharing open-source projects with the community. Currently building beautiful things with HTML, Tailwind, and JavaScript.
+      </div>
+    </div>
   </div>
 
   <script>
-  let flipped = false;
-  const profileContainer = document.getElementById('profile-container');
-  const profileImage = document.getElementById('profile-image');
+    const images = [
+      "https://files.catbox.moe/xdy8jt.jpg",
+      "https://files.catbox.moe/lu7u04.png",
+      "https://placehold.co/300x300?text=Profile+Alt"
+    ];
 
-  profileContainer.addEventListener('click', () => {
-    flipped = !flipped;
-    profileContainer.style.transform = flipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
-    profileImage.src = flipped
-      ? 'https://files.catbox.moe/lu7u04.png' // ganti dengan gambar kedua
-      : 'https://files.catbox.moe/xdy8jt.jpg';
-  });
-</script>
+    let current = 0;
+    let flipped = false;
+    const profileContainer = document.getElementById('profile-container');
+    const profileImage = document.getElementById('profile-image');
+
+    // Manual flip on click
+    profileContainer.addEventListener('click', () => {
+      flipped = !flipped;
+      profileContainer.style.transform = flipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+      profileImage.src = flipped ? images[1] : images[0];
+    });
+
+    // Auto cycle every 5 seconds
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      profileImage.src = images[current];
+    }, 5000);
+
+    // Dark mode toggle
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
 </body>
 </html>
